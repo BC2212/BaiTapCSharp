@@ -1,4 +1,4 @@
-# CSharpExercises_18CT113
+# BÀI TẬP LẬP TRÌNH C# LỚP 18CT113
 Thành viên:
   1. Nguyễn Hoài Minh
   2. Huỳnh Quang Linh
