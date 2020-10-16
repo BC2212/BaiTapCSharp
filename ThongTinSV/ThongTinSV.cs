@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ThongTinSV
 {
-    public partial class Form1 : Form
+    public partial class ThongTinSV : Form
     {
-        public Form1()
+        public ThongTinSV()
         {
             InitializeComponent();
         }

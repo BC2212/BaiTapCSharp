@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThongTinSV", "ThongTinSV\ThongTinSV.csproj", "{855D56BD-C7F4-4D7B-B810-51976BB4184C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLSV.Form", "ThongTinSV\QLSV.Form.csproj", "{855D56BD-C7F4-4D7B-B810-51976BB4184C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLSV.Lib", "QLSV.Lib\QLSV.Lib.csproj", "{06B89DCE-8B37-4C06-83F7-3968552B7F26}"
 EndProject
