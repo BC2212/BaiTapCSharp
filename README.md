@@ -1,4 +1,4 @@
-# BÀI TẬP LẬP TRÌNH C# LỚP 18CT113
+# ĐỒ ÁN MÔN HỌC C# LỚP 18CT113
 Thành viên:
   1. Nguyễn Hoài Minh
   2. Huỳnh Quang Linh
