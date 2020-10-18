@@ -12,14 +12,22 @@ namespace QLSV.Lib
     {
         public string Username { get; set; }
         public string Password { get; set; }
+        private string salt;
+
+        //Loại tài khoản: 0-user, 1-admin, 2-sa
+            //Sa: tất cả quyền, bao gồm xóa, tạo tài khoản addmin
+            //Admin: có thể thêm, sửa, xóa thông tin sinh viên
+            //User: chỉ xem hoặc chỉnh sửa thông tin cá nhân
+        public byte Type { get; set; }
         //public string Priorities { get; set; }
 
-        private static Random rand = new Random();
-        private static SHA512 shaM = new SHA512Managed();
+        private static readonly Random rand = new Random();
+        private static readonly SHA512 shaM = new SHA512Managed();
 
         public Account() {
             Username = "";
             Password = "";
+            Type = 0;
             //Tạm thời chưa có cách giải quyết cho priority nên sẽ để sau
             //Priorities = "";
         }
@@ -29,13 +37,15 @@ namespace QLSV.Lib
         {
             Username = username;
             Password = CreatePassword(pre_encryptedPasswd);
+            Type = 0;
         }
 
         //Dùng khi admin tạo account và phân quyền
-        /*public Account(string username, string pre_encryptedPasswd, string priorities)
+        /*public Account(string username, string pre_encryptedPasswd, string priorities, byte type)
         {
             Username = username;
             Password = CreatePassword(pre_encryptedPasswd);
+            Type = type;
             Priorities = priorities;
         }*/
 
@@ -89,6 +99,45 @@ namespace QLSV.Lib
             string salt = CreateSalt();
 
             return EncryptPassword(passwd, salt);
+        }
+
+        //Kiểm tra username có tồn tại hay chưa
+        private static bool CheckUsername(List<Account> listAccounts, string username)
+        {
+            return listAccounts.Exists(x => x.Username == username) == true ? true : false;
+        }
+
+        //Hàm tìm index của một account
+        internal static int SearchIndexOfAccount(List<Account> listAccounts, string username)
+        {
+            return listAccounts.FindIndex(delegate (Account account)
+            {
+                return account.Username.Equals(username);
+            });
+        }
+
+        //Kiểm tra password có chính xác không
+        private static bool CheckPassword(List<Account> listAccounts, string username, string passwd)
+        {
+            int index = SearchIndexOfAccount(listAccounts, username);
+
+            string encryptedPasswd = EncryptPassword(passwd, listAccounts[index].salt);
+
+            return listAccounts[index].Password.Equals(encryptedPasswd);
+        }
+
+        //Đăng nhập
+        public static int LogIn(string username, string passwd)
+        {
+            //Hàm trả về quyền và kết quả kiểm tra dùng để load form phù hợp
+            //-1: Đăng nhập thất bại, sai username hoặc mật khẩu
+            //0: Là user
+            //1: Là admin
+            //2: Là sa
+
+
+
+            return 0;
         }
     }
 }
