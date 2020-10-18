@@ -12,9 +12,32 @@ namespace QLSV.Lib
     {
         public string Username { get; set; }
         public string Password { get; set; }
+        //public string Priorities { get; set; }
 
         private static Random rand = new Random();
         private static SHA512 shaM = new SHA512Managed();
+
+        public Account() {
+            Username = "";
+            Password = "";
+            //Tạm thời chưa có cách giải quyết cho priority nên sẽ để sau
+            //Priorities = "";
+        }
+
+        //Dùng khi user tự tạo account
+        public Account(string username, string pre_encryptedPasswd)
+        {
+            Username = username;
+            Password = CreatePassword(pre_encryptedPasswd);
+        }
+
+        //Dùng khi admin tạo account và phân quyền
+        /*public Account(string username, string pre_encryptedPasswd, string priorities)
+        {
+            Username = username;
+            Password = CreatePassword(pre_encryptedPasswd);
+            Priorities = priorities;
+        }*/
 
         //Cấu trúc của passwd là pass+salt rồi mã hóa
         private static string CreateSalt()
