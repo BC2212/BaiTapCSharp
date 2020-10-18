@@ -108,7 +108,7 @@ namespace QLSV.Lib
         }
 
         //Hàm tìm index của một account
-        internal static int SearchIndexOfAccount(List<Account> listAccounts, string username)
+        internal static int SearchIndexOfAccountByUsername(List<Account> listAccounts, string username)
         {
             return listAccounts.FindIndex(delegate (Account account)
             {
@@ -116,18 +116,26 @@ namespace QLSV.Lib
             });
         }
 
-        //Kiểm tra password có chính xác không
+        //Kiểm tra password có chính xác không nếu chưa tìm ra index của account
         private static bool CheckPassword(List<Account> listAccounts, string username, string passwd)
         {
-            int index = SearchIndexOfAccount(listAccounts, username);
+            int index = SearchIndexOfAccountByUsername(listAccounts, username);
 
             string encryptedPasswd = EncryptPassword(passwd, listAccounts[index].salt);
 
             return listAccounts[index].Password.Equals(encryptedPasswd);
         }
 
+        //Kiểm tra password khi đã biết chính xac index của account
+        private static bool CheckPassword(List<Account> listAccounts, string passwd, int index)
+        {
+            string encryptedPasswd = EncryptPassword(passwd, listAccounts[index].salt);
+
+            return listAccounts[index].Password.Equals(encryptedPasswd);
+        }
+
         //Đăng nhập
-        public static int LogIn(string username, string passwd)
+        public static int LogIn(List<Account> listAccounts, string username, string passwd)
         {
             //Hàm trả về quyền và kết quả kiểm tra dùng để load form phù hợp
             //-1: Đăng nhập thất bại, sai username hoặc mật khẩu
@@ -135,9 +143,15 @@ namespace QLSV.Lib
             //1: Là admin
             //2: Là sa
 
+            int index = SearchIndexOfAccountByUsername(listAccounts, username);
+            Console.WriteLine("index: {0}", index);
 
-
-            return 0;
+            if (index < 0)
+                return -1;
+            else
+            {
+                return CheckPassword(listAccounts, passwd, index) ? listAccounts[index].Type : -1;
+            }
         }
     }
 }
