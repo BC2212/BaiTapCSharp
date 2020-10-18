@@ -32,21 +32,25 @@ namespace QLSV.Lib
             return salt;
         }
 
-        public static string CreatePassword(string passwd)
+        //Hàm mã hóa password dùng SHA512
+        internal static string EncryptPassword(string pre_passwd, string salt)
+        {
+            byte[] data = shaM.ComputeHash(Encoding.UTF8.GetBytes(pre_passwd + salt));
+            string encryptedPasswd = "";
+
+            for (int i = 0; i < data.Length; i++)
+                encryptedPasswd += data[i].ToString();
+
+            return encryptedPasswd;
+        }
+
+        internal static string CreatePassword(string passwd)
         {
             //Tạo salt
             string salt = CreateSalt();
 
             //Trả về passwd đã mã hóa
-            byte[] data = shaM.ComputeHash(Encoding.UTF8.GetBytes(passwd+salt));
-            string encryptedPasswd = "";
-            for (int i=0; i<data.Length; i++)
-            {
-                encryptedPasswd += data[i].ToString();
-            }
-
-            return encryptedPasswd;
-
+            return EncryptPassword(passwd, salt);
         }
     }
 }
