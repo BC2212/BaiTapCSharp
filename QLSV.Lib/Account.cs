@@ -33,9 +33,9 @@ namespace QLSV.Lib
         }
 
         //Hàm mã hóa password dùng SHA512
-        internal static string EncryptPassword(string pre_passwd, string salt)
+        internal static string EncryptPassword(string pre_encryptedPasswd, string salt)
         {
-            byte[] data = shaM.ComputeHash(Encoding.UTF8.GetBytes(pre_passwd + salt));
+            byte[] data = shaM.ComputeHash(Encoding.UTF8.GetBytes(pre_encryptedPasswd + salt));
             string encryptedPasswd = "";
 
             for (int i = 0; i < data.Length; i++)
