@@ -11,7 +11,7 @@ namespace QLSV.Lib
     public class Account
     {
         public string Username { get; set; }
-        public string Password { get; set; }
+        protected string Password { get; set; }
         private string salt;
 
         //Loại tài khoản: 0-user, 1-admin, 2-sa
@@ -40,14 +40,24 @@ namespace QLSV.Lib
             Type = 0;
         }
 
+        public static void PrintAllAccounts(List<Account> listAccounts)
+        {
+            foreach(Account account in listAccounts)
+            {
+                Console.WriteLine("Username: {0}", account.Username);
+                Console.WriteLine("Password: {0}", account.Password);
+                Console.WriteLine("Type: {0}", account.Type);
+                Console.WriteLine("-----------------");
+            }
+        }
+
         //Dùng khi admin tạo account và phân quyền
-        /*public Account(string username, string pre_encryptedPasswd, string priorities, byte type)
+        public Account(string username, string pre_encryptedPasswd, byte type)
         {
             Username = username;
             Password = CreatePassword(pre_encryptedPasswd);
             Type = type;
-            Priorities = priorities;
-        }*/
+        }
 
         //Cấu trúc của passwd là pass+salt rồi mã hóa
         private static string CreateSalt()

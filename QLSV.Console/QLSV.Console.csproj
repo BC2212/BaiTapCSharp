@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\QLSV.Lib\QLSV.Lib.csproj">
+      <Project>{06b89dce-8b37-4c06-83f7-3968552b7f26}</Project>
+      <Name>QLSV.Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
