@@ -1,6 +1,6 @@
 D:\BCat22\DoAnMonHocCSharp\QLSV.Lib\bin\Debug\QLSV.Lib.dll
 D:\BCat22\DoAnMonHocCSharp\QLSV.Lib\bin\Debug\QLSV.Lib.pdb
-D:\BCat22\DoAnMonHocCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.csprojAssemblyReference.cache
 D:\BCat22\DoAnMonHocCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.csproj.CoreCompileInputs.cache
 D:\BCat22\DoAnMonHocCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.dll
 D:\BCat22\DoAnMonHocCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.pdb
+D:\BCat22\DoAnMonHocCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.csprojAssemblyReference.cache

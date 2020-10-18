@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLSV.Lib;
 
 namespace ThongTinSV
 {
@@ -15,6 +16,10 @@ namespace ThongTinSV
         public ThongTinSV()
         {
             InitializeComponent();
+        }
+
+        private void ThongTinSV_Load(object sender, EventArgs e)
+        {
         }
     }
 }
