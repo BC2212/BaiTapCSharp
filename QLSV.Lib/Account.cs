@@ -16,7 +16,7 @@ namespace QLSV.Lib
         private static Random rand = new Random();
         private static SHA512 shaM = new SHA512Managed();
 
-        // Cấu trúc của passwd là pass+salt rồi mã hóa
+        //Cấu trúc của passwd là pass+salt rồi mã hóa
         private static string CreateSalt()
         {
             int i = 0;
@@ -38,7 +38,10 @@ namespace QLSV.Lib
         //Hàm mã hóa password dùng SHA512
         internal static string EncryptPassword(string pre_encryptedPasswd, string salt)
         {
+            //Mã hóa thành dãy các số
             byte[] data = shaM.ComputeHash(Encoding.UTF8.GetBytes(pre_encryptedPasswd + salt));
+
+            //Chuyển các số đó thành string và gộp lại
             string encryptedPasswd = "";
 
             for (int i = 0; i < data.Length; i++)
@@ -47,12 +50,21 @@ namespace QLSV.Lib
             return encryptedPasswd;
         }
 
+        //Tạo password
         internal static string CreatePassword(string passwd)
         {
             //Tạo salt
             string salt = CreateSalt();
 
-            //Trả về passwd đã mã hóa
+            //Trả về passwd đã mã hóa qua hàm mã hóa
+            return EncryptPassword(passwd, salt);
+        }
+
+        //Hàm đổi password. Không phải là hàm static nên có thể gọi trực tiếp từ object
+        public string ChangePassword(string passwd)
+        {
+            string salt = CreateSalt();
+
             return EncryptPassword(passwd, salt);
         }
     }
