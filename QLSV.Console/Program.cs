@@ -16,7 +16,7 @@ namespace QLSV.Console
             listAccounts.Add(new Account("quynh", "1", 2));
             listAccounts.Add(new Account("minh", "12", 1));
             listAccounts.Add(new Account("linh", "123", 1));
-            listAccounts.Add(new Account("nhi", "12345", 0));
+            listAccounts.Add(new Account("nam", "12345", 0));
             listAccounts.Add(new Account("hieu", "123456", 0));
 
             switch(Account.LogIn(listAccounts, "quynh", "1"))

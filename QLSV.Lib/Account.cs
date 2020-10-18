@@ -11,8 +11,8 @@ namespace QLSV.Lib
     public class Account
     {
         public string Username { get; set; }
-        public string Password { get; set; }
-        public string salt;
+        private string Password { get; set; }
+        private string salt;
 
         //Loại tài khoản: 0-user, 1-admin, 2-sa
             //Sa: tất cả quyền, bao gồm xóa, tạo tài khoản addmin
@@ -47,8 +47,6 @@ namespace QLSV.Lib
             foreach(Account account in listAccounts)
             {
                 Console.WriteLine("Username: {0}", account.Username);
-                Console.WriteLine("Password: {0}", account.Password);
-                Console.WriteLine("salt: {0}", account.salt);
                 Console.WriteLine("Type: {0}", account.Type);
                 Console.WriteLine("-----------------");
             }
