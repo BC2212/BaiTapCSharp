@@ -10,6 +10,9 @@ namespace QLSV.Lib
 {
     public class Account
     {
+        public string Username { get; set; }
+        public string Password { get; set; }
+
         private static Random rand = new Random();
         private static SHA512 shaM = new SHA512Managed();
 
