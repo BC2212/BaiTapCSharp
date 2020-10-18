@@ -19,7 +19,21 @@ namespace QLSV.Console
             listAccounts.Add(new Account("nhi", "12345", 0));
             listAccounts.Add(new Account("hieu", "123456", 0));
 
-            Account.PrintAllAccounts(listAccounts);
+            switch(Account.LogIn(listAccounts, "quynh", "1"))
+            {
+                case 0:
+                    System.Console.WriteLine("Day la tai khoan cua mot user");
+                    break;
+                case 1:
+                    System.Console.WriteLine("Day la tai khoan cua mot admin");
+                    break;
+                case 2:
+                    System.Console.WriteLine("Day la tai khoan cua mot system admin");
+                    break;
+                default:
+                    System.Console.WriteLine("Sai tai khoan hoac mat khau");
+                    break;
+            }
             System.Console.ReadKey();
         }
     }

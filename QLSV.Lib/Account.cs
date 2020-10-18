@@ -11,8 +11,8 @@ namespace QLSV.Lib
     public class Account
     {
         public string Username { get; set; }
-        protected string Password { get; set; }
-        private string salt;
+        public string Password { get; set; }
+        public string salt;
 
         //Loại tài khoản: 0-user, 1-admin, 2-sa
             //Sa: tất cả quyền, bao gồm xóa, tạo tài khoản addmin
@@ -28,6 +28,7 @@ namespace QLSV.Lib
             Username = "";
             Password = "";
             Type = 0;
+            salt = "";
             //Tạm thời chưa có cách giải quyết cho priority nên sẽ để sau
             //Priorities = "";
         }
@@ -36,7 +37,8 @@ namespace QLSV.Lib
         public Account(string username, string pre_encryptedPasswd)
         {
             Username = username;
-            Password = CreatePassword(pre_encryptedPasswd);
+            salt = CreateSalt();
+            Password = CreatePassword(pre_encryptedPasswd, salt);
             Type = 0;
         }
 
@@ -46,6 +48,7 @@ namespace QLSV.Lib
             {
                 Console.WriteLine("Username: {0}", account.Username);
                 Console.WriteLine("Password: {0}", account.Password);
+                Console.WriteLine("salt: {0}", account.salt);
                 Console.WriteLine("Type: {0}", account.Type);
                 Console.WriteLine("-----------------");
             }
@@ -55,7 +58,8 @@ namespace QLSV.Lib
         public Account(string username, string pre_encryptedPasswd, byte type)
         {
             Username = username;
-            Password = CreatePassword(pre_encryptedPasswd);
+            salt = CreateSalt();
+            Password = CreatePassword(pre_encryptedPasswd, salt);
             Type = type;
         }
 
@@ -94,11 +98,8 @@ namespace QLSV.Lib
         }
 
         //Tạo password
-        internal static string CreatePassword(string passwd)
+        internal static string CreatePassword(string passwd, string salt)
         {
-            //Tạo salt
-            string salt = CreateSalt();
-
             //Trả về passwd đã mã hóa qua hàm mã hóa
             return EncryptPassword(passwd, salt);
         }
@@ -154,13 +155,12 @@ namespace QLSV.Lib
             //2: Là sa
 
             int index = SearchIndexOfAccountByUsername(listAccounts, username);
-            Console.WriteLine("index: {0}", index);
 
             if (index < 0)
                 return -1;
             else
             {
-                return CheckPassword(listAccounts, passwd, index) ? listAccounts[index].Type : -1;
+                return CheckPassword(listAccounts, passwd, index) == true ? listAccounts[index].Type : -1;
             }
         }
     }
