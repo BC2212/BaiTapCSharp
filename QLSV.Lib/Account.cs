@@ -162,4 +162,9 @@ namespace QLSV.Lib
             }
         }
     }
+
+    public class GroupAccount
+    {
+        
+    }
 }
