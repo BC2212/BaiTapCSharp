@@ -15,6 +15,7 @@ namespace ThongTinSV
         public Login()
         {
             InitializeComponent();
+            //btnLogin.Location = Point(Form.Size[0])
         }
 
         private void SignIn_Load(object sender, EventArgs e)
@@ -28,11 +29,6 @@ namespace ThongTinSV
         }
 
         private void tbloginMatKhau_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
         }

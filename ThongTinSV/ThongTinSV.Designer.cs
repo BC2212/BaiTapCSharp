@@ -29,23 +29,26 @@
         private void InitializeComponent()
         {
             this.lblMaSV = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblNgaySinh = new System.Windows.Forms.Label();
             this.txtMSSV = new System.Windows.Forms.TextBox();
             this.lblGioiTinh = new System.Windows.Forms.Label();
             this.txtNgaySinh = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.txtLop = new System.Windows.Forms.TextBox();
             this.lblKhoa = new System.Windows.Forms.Label();
-            this.lblNoiSinh = new System.Windows.Forms.Label();
+            this.lblDiaChi = new System.Windows.Forms.Label();
             this.lblLop = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblSDT = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtKhoa = new System.Windows.Forms.TextBox();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblMaSV
@@ -58,13 +61,13 @@
             this.lblMaSV.TabIndex = 1;
             this.lblMaSV.Text = "Mã Sinh Viên";
             // 
-            // textBox1
+            // txtGioiTinh
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(500, 120);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtGioiTinh.Enabled = false;
+            this.txtGioiTinh.Location = new System.Drawing.Point(500, 120);
+            this.txtGioiTinh.Name = "txtGioiTinh";
+            this.txtGioiTinh.Size = new System.Drawing.Size(150, 20);
+            this.txtGioiTinh.TabIndex = 2;
             // 
             // lblName
             // 
@@ -121,22 +124,22 @@
             this.txtNgaySinh.TabIndex = 8;
             this.txtNgaySinh.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // textBox5
+            // txtDiaChi
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(150, 170);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(300, 20);
-            this.textBox5.TabIndex = 9;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.txtDiaChi.Enabled = false;
+            this.txtDiaChi.Location = new System.Drawing.Point(150, 170);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(300, 20);
+            this.txtDiaChi.TabIndex = 9;
+            this.txtDiaChi.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // textBox6
+            // txtLop
             // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(550, 170);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 10;
+            this.txtLop.Enabled = false;
+            this.txtLop.Location = new System.Drawing.Point(550, 170);
+            this.txtLop.Name = "txtLop";
+            this.txtLop.Size = new System.Drawing.Size(100, 20);
+            this.txtLop.TabIndex = 10;
             // 
             // lblKhoa
             // 
@@ -148,15 +151,15 @@
             this.lblKhoa.TabIndex = 11;
             this.lblKhoa.Text = "Khoa";
             // 
-            // lblNoiSinh
+            // lblDiaChi
             // 
-            this.lblNoiSinh.AutoSize = true;
-            this.lblNoiSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoiSinh.Location = new System.Drawing.Point(50, 170);
-            this.lblNoiSinh.Name = "lblNoiSinh";
-            this.lblNoiSinh.Size = new System.Drawing.Size(68, 20);
-            this.lblNoiSinh.TabIndex = 12;
-            this.lblNoiSinh.Text = "Nơi Sinh";
+            this.lblDiaChi.AutoSize = true;
+            this.lblDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiaChi.Location = new System.Drawing.Point(50, 170);
+            this.lblDiaChi.Name = "lblDiaChi";
+            this.lblDiaChi.Size = new System.Drawing.Size(57, 20);
+            this.lblDiaChi.TabIndex = 12;
+            this.lblDiaChi.Text = "Địa chỉ";
             // 
             // lblLop
             // 
@@ -188,54 +191,90 @@
             this.lblSDT.TabIndex = 15;
             this.lblSDT.Text = "SĐT";
             // 
-            // textBox7
+            // txtSDT
             // 
-            this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(150, 270);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(150, 20);
-            this.textBox7.TabIndex = 16;
+            this.txtSDT.Enabled = false;
+            this.txtSDT.Location = new System.Drawing.Point(150, 270);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(150, 20);
+            this.txtSDT.TabIndex = 16;
             // 
-            // textBox8
+            // txtEmail
             // 
-            this.textBox8.Enabled = false;
-            this.textBox8.Location = new System.Drawing.Point(400, 270);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(250, 20);
-            this.textBox8.TabIndex = 17;
-            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            this.txtEmail.Enabled = false;
+            this.txtEmail.Location = new System.Drawing.Point(400, 270);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(250, 20);
+            this.txtEmail.TabIndex = 17;
+            this.txtEmail.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
-            // textBox9
+            // txtKhoa
             // 
-            this.textBox9.Enabled = false;
-            this.textBox9.Location = new System.Drawing.Point(150, 220);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(500, 20);
-            this.textBox9.TabIndex = 18;
+            this.txtKhoa.Enabled = false;
+            this.txtKhoa.Location = new System.Drawing.Point(150, 220);
+            this.txtKhoa.Name = "txtKhoa";
+            this.txtKhoa.Size = new System.Drawing.Size(500, 20);
+            this.txtKhoa.TabIndex = 18;
+            // 
+            // btnThem
+            // 
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Location = new System.Drawing.Point(150, 329);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(100, 50);
+            this.btnThem.TabIndex = 19;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.BackColor = System.Drawing.Color.Red;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnXoa.Location = new System.Drawing.Point(550, 329);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(100, 50);
+            this.btnXoa.TabIndex = 21;
+            this.btnXoa.Text = "Xoá";
+            this.btnXoa.UseVisualStyleBackColor = false;
+            // 
+            // btnSua
+            // 
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Location = new System.Drawing.Point(350, 329);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(100, 50);
+            this.btnSua.TabIndex = 20;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
             // 
             // ThongTinSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.btnXoa);
+            this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.btnThem);
+            this.Controls.Add(this.txtKhoa);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.lblSDT);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblLop);
-            this.Controls.Add(this.lblNoiSinh);
+            this.Controls.Add(this.lblDiaChi);
             this.Controls.Add(this.lblKhoa);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtLop);
+            this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtNgaySinh);
             this.Controls.Add(this.lblGioiTinh);
             this.Controls.Add(this.txtMSSV);
             this.Controls.Add(this.lblNgaySinh);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtGioiTinh);
             this.Controls.Add(this.lblMaSV);
+            this.Enabled = false;
             this.Name = "ThongTinSV";
             this.Text = "ThongTinSV";
             this.Load += new System.EventHandler(this.ThongTinSV_Load);
@@ -246,22 +285,25 @@
 
         #endregion
         private System.Windows.Forms.Label lblMaSV;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtGioiTinh;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblNgaySinh;
         private System.Windows.Forms.TextBox txtMSSV;
         private System.Windows.Forms.Label lblGioiTinh;
         private System.Windows.Forms.TextBox txtNgaySinh;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.TextBox txtLop;
         private System.Windows.Forms.Label lblKhoa;
-        private System.Windows.Forms.Label lblNoiSinh;
+        private System.Windows.Forms.Label lblDiaChi;
         private System.Windows.Forms.Label lblLop;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblSDT;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtSDT;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtKhoa;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnSua;
     }
 }

@@ -121,7 +121,6 @@
             this.lblQuenMatKhau.TabStop = true;
             this.lblQuenMatKhau.Text = "Quên mật khẩu?";
             this.lblQuenMatKhau.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblQuenMatKhau.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // btnThoat
             // 
