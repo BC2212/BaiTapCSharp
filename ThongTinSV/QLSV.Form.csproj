@@ -66,6 +66,12 @@
     <Compile Include="ThongTinSV.Designer.cs">
       <DependentUpon>ThongTinSV.cs</DependentUpon>
     </Compile>
+    <Compile Include="TimKiem1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimKiem1.Designer.cs">
+      <DependentUpon>TimKiem1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DangKy.resx">
       <DependentUpon>DangKy.cs</DependentUpon>
     </EmbeddedResource>
@@ -84,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ThongTinSV.resx">
       <DependentUpon>ThongTinSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimKiem1.resx">
+      <DependentUpon>TimKiem1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
