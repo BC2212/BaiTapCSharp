@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLSV.Lib;
 
 namespace ThongTinSV
 {
@@ -40,6 +41,11 @@ namespace ThongTinSV
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDangKy_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

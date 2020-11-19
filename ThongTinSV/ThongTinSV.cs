@@ -41,5 +41,13 @@ namespace ThongTinSV
         {
 
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            if(txtMSSV.Text != "" && txtName.Text != "" && txtNgaySinh.Text != "" && txtGioiTinh.Text != "" && txtDiaChi.Text != "" && txtLop.Text != "" && txtKhoa.Text != "" && txtSDT.Text != "" && txtEmail.Text != "")
+            {
+                
+            }
+        }
     }
 }

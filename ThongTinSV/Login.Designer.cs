@@ -57,7 +57,7 @@
             this.txtTaiKhoan.BackColor = System.Drawing.SystemColors.Window;
             this.txtTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaiKhoan.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtTaiKhoan.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtTaiKhoan.Location = new System.Drawing.Point(150, 80);
             this.txtTaiKhoan.Multiline = true;
             this.txtTaiKhoan.Name = "txtTaiKhoan";
@@ -68,7 +68,7 @@
             // 
             this.txtMatKhau.BackColor = System.Drawing.SystemColors.Window;
             this.txtMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMatKhau.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtMatKhau.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtMatKhau.Location = new System.Drawing.Point(150, 129);
             this.txtMatKhau.Multiline = true;
             this.txtMatKhau.Name = "txtMatKhau";
@@ -108,6 +108,7 @@
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Đăng Nhập";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblQuenMatKhau
             // 
@@ -121,6 +122,7 @@
             this.lblQuenMatKhau.TabStop = true;
             this.lblQuenMatKhau.Text = "Quên mật khẩu?";
             this.lblQuenMatKhau.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblQuenMatKhau.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblQuenMatKhau_LinkClicked);
             // 
             // btnThoat
             // 
@@ -133,6 +135,7 @@
             this.btnThoat.TabIndex = 7;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // lblTaoTaiKhoan
             // 
@@ -143,6 +146,7 @@
             this.lblTaoTaiKhoan.TabIndex = 8;
             this.lblTaoTaiKhoan.TabStop = true;
             this.lblTaoTaiKhoan.Text = "Tạo tài khoản";
+            this.lblTaoTaiKhoan.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblTaoTaiKhoan_LinkClicked);
             // 
             // Login
             // 

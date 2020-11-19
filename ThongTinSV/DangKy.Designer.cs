@@ -272,6 +272,7 @@
             this.btnDangKy.TabIndex = 23;
             this.btnDangKy.Text = "Đăng Ký";
             this.btnDangKy.UseVisualStyleBackColor = false;
+            this.btnDangKy.Click += new System.EventHandler(this.btnDangKy_Click);
             // 
             // lblSlogen
             // 

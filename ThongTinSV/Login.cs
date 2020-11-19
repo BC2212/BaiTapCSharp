@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLSV.Lib;
 
 namespace ThongTinSV
 {
@@ -29,6 +30,45 @@ namespace ThongTinSV
         }
 
         private void tbloginMatKhau_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            DialogResult thongbao;
+            thongbao = (MessageBox.Show("Bán có muốn thoát?", "Chú ý!",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning));
+            if (thongbao == DialogResult.Yes)
+                Application.Exit();
+        }
+
+        private void lblTaoTaiKhoan_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DangKy frmDangKy = new DangKy();
+            frmDangKy.Enabled = true;
+            frmDangKy.ShowDialog();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            
+
+            List<Account> listAccounts = new List<Account>();
+
+            if(Account.LogIn(listAccounts, txtTaiKhoan.Text, txtMatKhau.Text) >= 0)
+            {
+                ThongTinSV frmThongTinSV = new ThongTinSV();
+                frmThongTinSV.Enabled = true;
+                frmThongTinSV.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Sai ten dang nhap hoac mat khau");
+            }
+        }
+
+        private void lblQuenMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
         }
