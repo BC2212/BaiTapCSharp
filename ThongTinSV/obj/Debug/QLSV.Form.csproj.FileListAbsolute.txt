@@ -19,7 +19,6 @@ F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\obj\Debug\QLSV.Form.csproj.GenerateResou
 F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\obj\Debug\QLSV.Form.csproj.CoreCompileInputs.cache
 F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\obj\Debug\ThongTinSV.exe
 F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\obj\Debug\ThongTinSV.pdb
-F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\obj\Debug\ThongTinSV.DangKy.resources
 F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\obj\Debug\ThongTinSV.TimKiem1.resources
 F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\bin\Debug\ThongTinSV.exe.config
 F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\bin\Debug\ThongTinSV.exe

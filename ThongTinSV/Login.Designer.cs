@@ -36,7 +36,6 @@
             this.btnLogin = new System.Windows.Forms.Button();
             this.lblQuenMatKhau = new System.Windows.Forms.LinkLabel();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.lblTaoTaiKhoan = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // lblTitleQLSV
@@ -63,6 +62,7 @@
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(200, 40);
             this.txtTaiKhoan.TabIndex = 1;
+            this.txtTaiKhoan.TextChanged += new System.EventHandler(this.txtTaiKhoan_TextChanged);
             // 
             // txtMatKhau
             // 
@@ -137,24 +137,12 @@
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // lblTaoTaiKhoan
-            // 
-            this.lblTaoTaiKhoan.AutoSize = true;
-            this.lblTaoTaiKhoan.Location = new System.Drawing.Point(54, 236);
-            this.lblTaoTaiKhoan.Name = "lblTaoTaiKhoan";
-            this.lblTaoTaiKhoan.Size = new System.Drawing.Size(73, 13);
-            this.lblTaoTaiKhoan.TabIndex = 8;
-            this.lblTaoTaiKhoan.TabStop = true;
-            this.lblTaoTaiKhoan.Text = "Tạo tài khoản";
-            this.lblTaoTaiKhoan.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblTaoTaiKhoan_LinkClicked);
-            // 
             // Login
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 461);
-            this.Controls.Add(this.lblTaoTaiKhoan);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.lblQuenMatKhau);
             this.Controls.Add(this.btnLogin);
@@ -181,6 +169,5 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.LinkLabel lblQuenMatKhau;
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.LinkLabel lblTaoTaiKhoan;
     }
 }

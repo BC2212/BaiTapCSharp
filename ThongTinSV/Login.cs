@@ -43,13 +43,6 @@ namespace ThongTinSV
                 Application.Exit();
         }
 
-        private void lblTaoTaiKhoan_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            DangKy frmDangKy = new DangKy();
-            frmDangKy.Enabled = true;
-            frmDangKy.ShowDialog();
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             
@@ -69,6 +62,11 @@ namespace ThongTinSV
         }
 
         private void lblQuenMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void txtTaiKhoan_TextChanged(object sender, EventArgs e)
         {
 
         }
