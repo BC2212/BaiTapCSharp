@@ -8,3 +8,13 @@ D:\BCat22\DoAnMonHocCSharp\QLSV.Console\obj\Debug\QLSV.Console.csproj.CoreCompil
 D:\BCat22\DoAnMonHocCSharp\QLSV.Console\obj\Debug\QLSV.Console.csproj.CopyComplete
 D:\BCat22\DoAnMonHocCSharp\QLSV.Console\obj\Debug\QLSV.Console.exe
 D:\BCat22\DoAnMonHocCSharp\QLSV.Console\obj\Debug\QLSV.Console.pdb
+F:\Học Kì 5\C#\DoAnCSharp\QLSV.Console\bin\Debug\QLSV.Console.exe.config
+F:\Học Kì 5\C#\DoAnCSharp\QLSV.Console\bin\Debug\QLSV.Console.exe
+F:\Học Kì 5\C#\DoAnCSharp\QLSV.Console\bin\Debug\QLSV.Console.pdb
+F:\Học Kì 5\C#\DoAnCSharp\QLSV.Console\bin\Debug\QLSV.Lib.dll
+F:\Học Kì 5\C#\DoAnCSharp\QLSV.Console\bin\Debug\QLSV.Lib.pdb
+F:\Học Kì 5\C#\DoAnCSharp\QLSV.Console\obj\Debug\QLSV.Console.csprojAssemblyReference.cache
+F:\Học Kì 5\C#\DoAnCSharp\QLSV.Console\obj\Debug\QLSV.Console.csproj.CoreCompileInputs.cache
+F:\Học Kì 5\C#\DoAnCSharp\QLSV.Console\obj\Debug\QLSV.Console.csproj.CopyComplete
+F:\Học Kì 5\C#\DoAnCSharp\QLSV.Console\obj\Debug\QLSV.Console.exe
+F:\Học Kì 5\C#\DoAnCSharp\QLSV.Console\obj\Debug\QLSV.Console.pdb

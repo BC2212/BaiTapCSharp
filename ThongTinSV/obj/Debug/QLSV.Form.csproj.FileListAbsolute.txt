@@ -11,3 +11,11 @@ D:\BCat22\DoAnMonHocCSharp\ThongTinSV\obj\Debug\QLSV.Form.csproj.CopyComplete
 D:\BCat22\DoAnMonHocCSharp\ThongTinSV\obj\Debug\ThongTinSV.exe
 D:\BCat22\DoAnMonHocCSharp\ThongTinSV\obj\Debug\ThongTinSV.pdb
 D:\BCat22\DoAnMonHocCSharp\ThongTinSV\obj\Debug\ThongTinSV.ThongTinSV.resources
+F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\obj\Debug\QLSV.Form.csprojAssemblyReference.cache
+F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\obj\Debug\ThongTinSV.Properties.Resources.resources
+F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\obj\Debug\ThongTinSV.Login.resources
+F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\obj\Debug\ThongTinSV.ThongTinSV.resources
+F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\obj\Debug\QLSV.Form.csproj.GenerateResource.cache
+F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\obj\Debug\QLSV.Form.csproj.CoreCompileInputs.cache
+F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\obj\Debug\ThongTinSV.exe
+F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\obj\Debug\ThongTinSV.pdb
