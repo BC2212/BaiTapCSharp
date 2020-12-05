@@ -144,6 +144,7 @@
             this.lblTaoTaiKhoan.TabIndex = 8;
             this.lblTaoTaiKhoan.TabStop = true;
             this.lblTaoTaiKhoan.Text = "Tạo tài khoản";
+            this.lblTaoTaiKhoan.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblTaoTaiKhoan_LinkClicked);
             // 
             // Login
             // 
