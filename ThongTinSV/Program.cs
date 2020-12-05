@@ -17,8 +17,8 @@ namespace ThongTinSV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ThongTinSV());
-            Console.WriteLine(Account.CreatePassword("quynh"));
+            //Application.Run(new ThongTinSV());
+            Application.Run(new Login());
         }
     }
 }
