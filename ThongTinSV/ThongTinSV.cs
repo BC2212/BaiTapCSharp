@@ -27,32 +27,12 @@ namespace ThongTinSV
 
         }
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             if(txtMSSV.Text != "" && txtName.Text != "" && txtNgaySinh.Text != "" && txtGioiTinh.Text != "" && txtDiaChi.Text != "" && txtLop.Text != "" && txtKhoa.Text != "" && txtSDT.Text != "" && txtEmail.Text != "")
             {
                 
             }
-        }
-
-        private void tiềmKiếmToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

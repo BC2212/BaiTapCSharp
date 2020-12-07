@@ -136,7 +136,6 @@
             this.txtNgaySinh.Name = "txtNgaySinh";
             this.txtNgaySinh.Size = new System.Drawing.Size(200, 20);
             this.txtNgaySinh.TabIndex = 8;
-            this.txtNgaySinh.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // txtDiaChi
             // 
@@ -145,7 +144,6 @@
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(300, 20);
             this.txtDiaChi.TabIndex = 9;
-            this.txtDiaChi.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // txtLop
             // 
@@ -220,7 +218,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(250, 20);
             this.txtEmail.TabIndex = 17;
-            this.txtEmail.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // txtKhoa
             // 
@@ -340,7 +337,6 @@
             this.mnuTiemKiem.Name = "mnuTiemKiem";
             this.mnuTiemKiem.Size = new System.Drawing.Size(180, 22);
             this.mnuTiemKiem.Text = "Tiềm kiếm";
-            this.mnuTiemKiem.Click += new System.EventHandler(this.tiềmKiếmToolStripMenuItem_Click);
             // 
             // ThongTinSV
             // 
