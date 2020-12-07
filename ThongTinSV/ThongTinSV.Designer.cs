@@ -59,6 +59,10 @@
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.mnuTTSV = new System.Windows.Forms.MenuStrip();
+            this.mnu = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTiemKiem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTTSV.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblMaSV
@@ -314,6 +318,30 @@
             // 
             this.columnHeader9.Text = "Email";
             // 
+            // mnuTTSV
+            // 
+            this.mnuTTSV.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnu});
+            this.mnuTTSV.Location = new System.Drawing.Point(0, 0);
+            this.mnuTTSV.Name = "mnuTTSV";
+            this.mnuTTSV.Size = new System.Drawing.Size(784, 24);
+            this.mnuTTSV.TabIndex = 23;
+            // 
+            // mnu
+            // 
+            this.mnu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuTiemKiem});
+            this.mnu.Name = "mnu";
+            this.mnu.Size = new System.Drawing.Size(48, 20);
+            this.mnu.Text = "Menu";
+            // 
+            // mnuTiemKiem
+            // 
+            this.mnuTiemKiem.Name = "mnuTiemKiem";
+            this.mnuTiemKiem.Size = new System.Drawing.Size(180, 22);
+            this.mnuTiemKiem.Text = "Tiềm kiếm";
+            this.mnuTiemKiem.Click += new System.EventHandler(this.tiềmKiếmToolStripMenuItem_Click);
+            // 
             // ThongTinSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -341,10 +369,13 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.txtGioiTinh);
             this.Controls.Add(this.lblMaSV);
+            this.Controls.Add(this.mnuTTSV);
             this.Enabled = false;
             this.Name = "ThongTinSV";
             this.Text = "ThongTinSV";
             this.Load += new System.EventHandler(this.ThongTinSV_Load);
+            this.mnuTTSV.ResumeLayout(false);
+            this.mnuTTSV.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -382,5 +413,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.MenuStrip mnuTTSV;
+        private System.Windows.Forms.ToolStripMenuItem mnu;
+        private System.Windows.Forms.ToolStripMenuItem mnuTiemKiem;
     }
 }

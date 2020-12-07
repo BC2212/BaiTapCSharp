@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimKiem1));
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lstvTiemkiem = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -65,9 +65,9 @@
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.UseVisualStyleBackColor = false;
             // 
-            // listView1
+            // lstvTiemkiem
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstvTiemkiem.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
@@ -78,13 +78,13 @@
             this.columnHeader8,
             this.columnHeader9,
             this.columnHeader10});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(12, 64);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(760, 485);
-            this.listView1.TabIndex = 7;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.lstvTiemkiem.HideSelection = false;
+            this.lstvTiemkiem.Location = new System.Drawing.Point(12, 64);
+            this.lstvTiemkiem.Name = "lstvTiemkiem";
+            this.lstvTiemkiem.Size = new System.Drawing.Size(760, 485);
+            this.lstvTiemkiem.TabIndex = 7;
+            this.lstvTiemkiem.UseCompatibleStateImageBehavior = false;
+            this.lstvTiemkiem.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -128,7 +128,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lstvTiemkiem);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txtTimKiem);
             this.Name = "TimKiem1";
@@ -141,7 +141,7 @@
         #endregion
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lstvTiemkiem;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;

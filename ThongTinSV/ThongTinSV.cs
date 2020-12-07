@@ -49,5 +49,10 @@ namespace ThongTinSV
                 
             }
         }
+
+        private void tiềmKiếmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
