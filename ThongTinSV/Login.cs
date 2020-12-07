@@ -69,5 +69,10 @@ namespace ThongTinSV
         {
 
         }
+
+        private void lblTaoTaiKhoan_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
     }
 }
