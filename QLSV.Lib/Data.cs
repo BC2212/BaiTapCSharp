@@ -13,19 +13,19 @@ using Excel = Microsoft.Office.Interop.Excel;
 namespace QLSV.Lib {
     public class Data
     {
-        private Excel.Application xlApp;
-        private Excel.Workbook xlWorkBook;
-        private Excel.Worksheet xlWorkSheet;
-        private Excel.Range range;
+        private static Excel.Application xlApp;
+        private static Excel.Workbook xlWorkBook;
+        private static Excel.Worksheet xlWorkSheet;
+        private static Excel.Range range;
 
         //Trả về số dòng có trong worksheet
-        private int GetNumberOfRows(Excel.WorkSheet workSheet)
+        private static int GetNumberOfRows(Excel.Worksheet workSheet)
         {
             return workSheet.UsedRange.Rows.Count;
         }
 
         //Trả về số cột có trong worksheet
-        private int GetNumberOfColumns(Excel.WorkSheet workSheet)
+        private static int GetNumberOfColumns(Excel.Worksheet workSheet)
         {
             return workSheet.UsedRange.Columns.Count;
         }
@@ -50,7 +50,6 @@ namespace QLSV.Lib {
                 {
                     continue;
                 }
-                listAccounts.Add(account);
             }
 
             foreach (Account account in listAccounts)
@@ -67,6 +66,8 @@ namespace QLSV.Lib {
             Marshal.ReleaseComObject(xlWorkSheet);
             Marshal.ReleaseComObject(xlWorkBook);
             Marshal.ReleaseComObject(xlApp);
+
+            return listAccounts;
         }
     }
 }

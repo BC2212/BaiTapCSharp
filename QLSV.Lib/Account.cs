@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,18 +8,29 @@ using System.Security.Cryptography;
 
 namespace QLSV.Lib
 {
+    public static class Permissions
+    {
+        public static readonly int[] Permission = {1, 2, 4, 8};
+
+        public static readonly int View = 1;                //quyền xem
+        public static readonly int Edit = 2;                //quyền chỉnh sửa thông tin của user
+        public static readonly int DeleteUser = 4;          //quyền xóa user
+        public static readonly int Special = 8;             //các quyền thêm, sửa, xóa tài khoản admin (dành cho system admin)
+    }
+
     public class Account
     {
-        public string Username { get; set; }
+        public string Username;
         private string Password { get; set; }
         private string salt;
+        private int Permission { get; set; }
+        
 
         //Loại tài khoản: 0-user, 1-admin, 2-sa
             //Sa: tất cả quyền, bao gồm xóa, tạo tài khoản addmin
             //Admin: có thể thêm, sửa, xóa thông tin sinh viên
             //User: chỉ xem hoặc chỉnh sửa thông tin cá nhân
         public byte Type { get; set; }
-        //public string Priorities { get; set; }
 
         private static readonly Random rand = new Random();
         private static readonly SHA512 shaM = new SHA512Managed();
@@ -29,8 +40,7 @@ namespace QLSV.Lib
             Password = "";
             Type = 0;
             salt = "";
-            //Tạm thời chưa có cách giải quyết cho priority nên sẽ để sau
-            //Priorities = "";
+            Permission = 0;
         }
 
         //Dùng khi user tự tạo account
@@ -40,25 +50,28 @@ namespace QLSV.Lib
             salt = CreateSalt();
             Password = CreatePassword(pre_encryptedPasswd, salt);
             Type = 0;
+            Permission = 3;
+        }
+
+        //Dùng khi admin tạo account
+        public Account(string username, byte type, int permission, string pre_encryptedPasswd = "12345678")
+        {
+            Username = username;
+            salt = CreateSalt();
+            Password = CreatePassword(pre_encryptedPasswd, salt);
+            Type = type;
+            Permission = permission;
         }
 
         public static void PrintAllAccounts(List<Account> listAccounts)
         {
             foreach(Account account in listAccounts)
             {
-                Console.WriteLine("Username: {0}", account.Username);
-                Console.WriteLine("Type: {0}", account.Type);
+                Console.WriteLine($"Username: {account.Username}");
+                Console.WriteLine($"Type: {account.Type}");
+                Console.WriteLine($"Permission: {account.Permission}");
                 Console.WriteLine("-----------------");
             }
-        }
-
-        //Dùng khi admin tạo account và phân quyền
-        public Account(string username, string pre_encryptedPasswd, byte type)
-        {
-            Username = username;
-            salt = CreateSalt();
-            Password = CreatePassword(pre_encryptedPasswd, salt);
-            Type = type;
         }
 
         //Cấu trúc của passwd là pass+salt rồi mã hóa
@@ -160,6 +173,11 @@ namespace QLSV.Lib
             {
                 return CheckPassword(listAccounts, passwd, index) == true ? listAccounts[index].Type : -1;
             }
+        }
+
+        public bool CheckPermission(int permissionNeedChecking)
+        {
+            return (this.Permission & permissionNeedChecking) == permissionNeedChecking ? true : false;
         }
     }
 }
