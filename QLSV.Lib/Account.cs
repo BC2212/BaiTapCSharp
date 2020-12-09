@@ -10,8 +10,6 @@ namespace QLSV.Lib
 {
     public static class Permissions
     {
-        public static readonly int[] Permission = {1, 2, 4, 8};
-
         public static readonly int View = 1;                //quyền xem
         public static readonly int Edit = 2;                //quyền chỉnh sửa thông tin của user
         public static readonly int DeleteUser = 4;          //quyền xóa user
