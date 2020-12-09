@@ -10,34 +10,35 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using Excel = Microsoft.Office.Interop.Excel;
 
-namespace QLSV.Lib {
+namespace QLSV.Lib
+{
     public class Data
     {
         private static Excel.Application xlApp;
         private static Excel.Workbook xlWorkBook;
-        private static Excel.Worksheet xlWorkSheet;
+        private static Excel.Worksheet xlWorksheet;
         private static Excel.Range range;
 
-        //Trả về số dòng có trong worksheet
-        private static int GetNumberOfRows(Excel.Worksheet workSheet)
+        //Trả về số dòng có trong Worksheet
+        private static int GetNumberOfRows(Excel.Worksheet Worksheet)
         {
-            return workSheet.UsedRange.Rows.Count;
+            return Worksheet.UsedRange.Rows.Count;
         }
 
-        //Trả về số cột có trong worksheet
-        private static int GetNumberOfColumns(Excel.Worksheet workSheet)
+        //Trả về số cột có trong Worksheet
+        private int GetNumberOfColumns(Excel.Worksheet Worksheet)
         {
-            return workSheet.UsedRange.Columns.Count;
+            return Worksheet.UsedRange.Columns.Count;
         }
 
         public static List<Account> GetDataFromExcel()
         {
-            
+
             xlApp = new Excel.Application();
             xlWorkBook = xlApp.Workbooks.Open(@"C:\New folder\test.xlsx", 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
-            xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+            xlWorksheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
-            int rw = GetNumberOfRows(xlWorkSheet);
+            int rw = GetNumberOfRows(xlWorksheet);
 
             List<Account> listAccounts = new List<Account>();
 
@@ -50,6 +51,7 @@ namespace QLSV.Lib {
                 {
                     continue;
                 }
+                //listAccounts.Add(account);
             }
 
             foreach (Account account in listAccounts)
@@ -58,12 +60,12 @@ namespace QLSV.Lib {
             }
             GC.Collect();
             GC.WaitForPendingFinalizers();
-            Marshal.ReleaseComObject(xlWorkSheet);
+            Marshal.ReleaseComObject(xlWorksheet);
             xlWorkBook.Close();
             Marshal.ReleaseComObject(xlWorkBook);
             //xlWorkBook.Close(true, null, null);
             //xlApp.Quit();
-            Marshal.ReleaseComObject(xlWorkSheet);
+            Marshal.ReleaseComObject(xlWorksheet);
             Marshal.ReleaseComObject(xlWorkBook);
             Marshal.ReleaseComObject(xlApp);
 

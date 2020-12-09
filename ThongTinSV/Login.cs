@@ -36,11 +36,7 @@ namespace ThongTinSV
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            DialogResult thongbao;
-            thongbao = (MessageBox.Show("Bán có muốn thoát?", "Chú ý!",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Warning));
-            if (thongbao == DialogResult.Yes)
-                Application.Exit();
+            this.Close();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -58,6 +54,9 @@ namespace ThongTinSV
             else
             {
                 MessageBox.Show("Sai ten dang nhap hoac mat khau");
+                txtTaiKhoan.Text = "";
+                txtMatKhau.Text = "";
+                txtTaiKhoan.Focus();
             }
         }
 
