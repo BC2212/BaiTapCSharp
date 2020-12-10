@@ -14,6 +14,7 @@ namespace QLSV.Lib
 {
     public class Data
     {
+        private static string path = string.Format(@"{0}\data.xlsx", Application.StartupPath);
         private static Excel.Application xlApp;
         private static Excel.Workbook xlWorkBook;
         private static Excel.Worksheet xlWorksheet;
@@ -35,7 +36,6 @@ namespace QLSV.Lib
         {
 
             xlApp = new Excel.Application();
-            string path = string.Format(@"{0}\data.xlsx", Application.StartupPath);
             xlWorkBook = xlApp.Workbooks.Open(path, 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
             xlWorksheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
@@ -84,10 +84,9 @@ namespace QLSV.Lib
             myExcelApp = new Excel.ApplicationClass();
             myExcelApp.Visible = true;
             myExcelWorkbooks = myExcelApp.Workbooks;
-            string path = string.Format(@"{0}\data.xlsx", Application.StartupPath);
-            String fileName = @path;
+            String fileName = path;
             myExcelWorkbook = myExcelWorkbooks.Open(fileName, misValue, misValue, misValue, misValue,
-          misValue, misValue, misValue, misValue, misValue, misValue, misValue, misValue, misValue, misValue);
+            misValue, misValue, misValue, misValue, misValue, misValue, misValue, misValue, misValue, misValue);
 
             Excel.Worksheet myExcelWorksheet = (Excel.Worksheet)myExcelWorkbook.ActiveSheet;
 
