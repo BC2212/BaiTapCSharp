@@ -35,7 +35,8 @@ namespace QLSV.Lib
         {
 
             xlApp = new Excel.Application();
-            xlWorkBook = xlApp.Workbooks.Open(@"C:\New folder\test.xlsx", 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
+            string path = string.Format(@"{0}\data.xlsx", Application.StartupPath);
+            xlWorkBook = xlApp.Workbooks.Open(path, 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
             xlWorksheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
             int rw = GetNumberOfRows(xlWorksheet);
@@ -72,7 +73,7 @@ namespace QLSV.Lib
             return listAccounts;
         }
         //ham write data
-        static void Main(string[] args)
+        static void Main(string[] args  )
         {
             Excel._Application myExcelApp;
             Excel.Workbooks myExcelWorkbooks;
@@ -83,7 +84,8 @@ namespace QLSV.Lib
             myExcelApp = new Excel.ApplicationClass();
             myExcelApp.Visible = true;
             myExcelWorkbooks = myExcelApp.Workbooks;
-            String fileName = "C:\New folder\test.xlsx";
+            string path = string.Format(@"{0}\data.xlsx", Application.StartupPath);
+            String fileName = @path;
             myExcelWorkbook = myExcelWorkbooks.Open(fileName, misValue, misValue, misValue, misValue,
           misValue, misValue, misValue, misValue, misValue, misValue, misValue, misValue, misValue, misValue);
 
