@@ -71,5 +71,29 @@ namespace QLSV.Lib
 
             return listAccounts;
         }
+        //ham write data
+        static void Main(string[] args)
+        {
+            Excel._Application myExcelApp;
+            Excel.Workbooks myExcelWorkbooks;
+            Excel.Workbook myExcelWorkbook;
+            // Excel ._Worksheet myExccelWorksheetToChange;
+            object misValue = System.Reflection.Missing.Value;
+
+            myExcelApp = new Excel.ApplicationClass();
+            myExcelApp.Visible = true;
+            myExcelWorkbooks = myExcelApp.Workbooks;
+            String fileName = "C:\New folder\test.xlsx";
+            myExcelWorkbook = myExcelWorkbooks.Open(fileName, misValue, misValue, misValue, misValue,
+          misValue, misValue, misValue, misValue, misValue, misValue, misValue, misValue, misValue, misValue);
+
+            Excel.Worksheet myExcelWorksheet = (Excel.Worksheet)myExcelWorkbook.ActiveSheet;
+
+            String cellFormulaAsString = myExcelWorksheet.get_Range("A2", misValue).Formula.ToString();
+
+            myExcelWorksheet.get_Range("A2", misValue).Formula = Console.ReadLine();
+
+        }
+
     }
 }

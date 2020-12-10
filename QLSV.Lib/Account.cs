@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using Microsoft.Office.Core;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 
 namespace QLSV.Lib
