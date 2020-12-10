@@ -14,6 +14,7 @@ namespace QLSV.Lib
 {
     public class Data
     {
+        private static string path = string.Format(@"{0}\data.xlsx", Application.StartupPath);
         private static Excel.Application xlApp;
         private static Excel.Workbook xlWorkBook;
         private static Excel.Worksheet xlWorksheet;
@@ -35,7 +36,7 @@ namespace QLSV.Lib
         {
 
             xlApp = new Excel.Application();
-            xlWorkBook = xlApp.Workbooks.Open(@"C:\New folder\test.xlsx", 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
+            xlWorkBook = xlApp.Workbooks.Open(path, 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
             xlWorksheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
             int rw = GetNumberOfRows(xlWorksheet);
@@ -71,5 +72,29 @@ namespace QLSV.Lib
 
             return listAccounts;
         }
+        //ham write data
+        static void Main(string[] args  )
+        {
+            Excel._Application myExcelApp;
+            Excel.Workbooks myExcelWorkbooks;
+            Excel.Workbook myExcelWorkbook;
+            // Excel ._Worksheet myExccelWorksheetToChange;
+            object misValue = System.Reflection.Missing.Value;
+
+            myExcelApp = new Excel.ApplicationClass();
+            myExcelApp.Visible = true;
+            myExcelWorkbooks = myExcelApp.Workbooks;
+            String fileName = path;
+            myExcelWorkbook = myExcelWorkbooks.Open(fileName, misValue, misValue, misValue, misValue,
+            misValue, misValue, misValue, misValue, misValue, misValue, misValue, misValue, misValue, misValue);
+
+            Excel.Worksheet myExcelWorksheet = (Excel.Worksheet)myExcelWorkbook.ActiveSheet;
+
+            String cellFormulaAsString = myExcelWorksheet.get_Range("A2", misValue).Formula.ToString();
+
+            myExcelWorksheet.get_Range("A2", misValue).Formula = Console.ReadLine();
+
+        }
+
     }
 }

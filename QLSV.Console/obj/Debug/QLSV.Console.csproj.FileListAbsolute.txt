@@ -18,3 +18,13 @@ F:\Học Kì 5\C#\DoAnCSharp\QLSV.Console\obj\Debug\QLSV.Console.csproj.CoreComp
 F:\Học Kì 5\C#\DoAnCSharp\QLSV.Console\obj\Debug\QLSV.Console.csproj.CopyComplete
 F:\Học Kì 5\C#\DoAnCSharp\QLSV.Console\obj\Debug\QLSV.Console.exe
 F:\Học Kì 5\C#\DoAnCSharp\QLSV.Console\obj\Debug\QLSV.Console.pdb
+C:\git\QLSV.Console\bin\Debug\QLSV.Console.exe.config
+C:\git\QLSV.Console\bin\Debug\QLSV.Console.exe
+C:\git\QLSV.Console\bin\Debug\QLSV.Console.pdb
+C:\git\QLSV.Console\bin\Debug\QLSV.Lib.dll
+C:\git\QLSV.Console\bin\Debug\QLSV.Lib.pdb
+C:\git\QLSV.Console\obj\Debug\QLSV.Console.csprojAssemblyReference.cache
+C:\git\QLSV.Console\obj\Debug\QLSV.Console.csproj.CoreCompileInputs.cache
+C:\git\QLSV.Console\obj\Debug\QLSV.Console.csproj.CopyComplete
+C:\git\QLSV.Console\obj\Debug\QLSV.Console.exe
+C:\git\QLSV.Console\obj\Debug\QLSV.Console.pdb
