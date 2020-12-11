@@ -18,18 +18,22 @@ namespace QLSV.Lib
         private static Excel.Application xlApp;
         private static Excel.Workbook xlWorkBook;
         private static Excel.Worksheet xlWorksheet;
-        private static Excel.Range range;
+        
+        //Trả về range của một worksheet
+        private static Excel.Range GetRangeOfWorksheet(Excel.Worksheet worksheet) {
+            return worksheet.UsedRange;
+        }
 
         //Trả về số dòng có trong Worksheet
-        private static int GetNumberOfRows(Excel.Worksheet Worksheet)
+        private static int GetNumberOfRows(Excel.Range range)
         {
-            return Worksheet.UsedRange.Rows.Count;
+            return Range.Rows.Count;
         }
 
         //Trả về số cột có trong Worksheet
-        private int GetNumberOfColumns(Excel.Worksheet Worksheet)
+        private int GetNumberOfColumns(Excel.Range range)
         {
-            return Worksheet.UsedRange.Columns.Count;
+            return range.Columns.Count;
         }
 
         public static List<Account> GetDataFromExcel()
