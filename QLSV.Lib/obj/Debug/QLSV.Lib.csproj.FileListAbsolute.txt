@@ -19,3 +19,10 @@ C:\git\QLSV.Lib\obj\Debug\QLSV.Lib.pdb
 C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.csprojAssemblyReference.cache
 C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.dll
 C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.pdb
+D:\BCat22\DoAnCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.csprojAssemblyReference.cache
+D:\BCat22\DoAnCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.csproj.ResolveComReference.cache
+D:\BCat22\DoAnCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.csproj.CoreCompileInputs.cache
+D:\BCat22\DoAnCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.dll
+D:\BCat22\DoAnCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.pdb
+D:\BCat22\DoAnCSharp\QLSV.Lib\bin\Debug\QLSV.Lib.dll
+D:\BCat22\DoAnCSharp\QLSV.Lib\bin\Debug\QLSV.Lib.pdb

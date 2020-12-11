@@ -27,7 +27,7 @@ namespace QLSV.Lib
         //Trả về số dòng có trong Worksheet
         private static int GetNumberOfRows(Excel.Range range)
         {
-            return Range.Rows.Count;
+            return range.Rows.Count;
         }
 
         //Trả về số cột có trong Worksheet
@@ -39,13 +39,14 @@ namespace QLSV.Lib
         //Hàm lấy dữ liệu cho Account
         private static Account GetAccountFromWorksheet(Excel.Range range, int row)
         {
-            string username = (string)(range.Cells[row, 1] as Excel.Range).Value2;
-            string password = (string)(range.Cells[row, 2] as Excel.Range).Value2;
-            string salt = (string)(range.Cells[row, 3] as Excel.Range).Value2;
-            byte type = (byte)(range.Cells[row, 4] as Excel.Range).Value2;
-            int permission = (int)(range.Cells[row, 5] as Excel.Range).Value2;
-            
-            return new Account(Username=username, Password=password, salt=salt, Type=type, Permission=permission);
+            Account account = new Account();
+            account.Username = (string)(range.Cells[row, 1] as Excel.Range).Value2;
+            account.Password = (string)(range.Cells[row, 2] as Excel.Range).Value2;
+            account.Salt = (string)(range.Cells[row, 3] as Excel.Range).Value2;
+            account.Type = (byte)(range.Cells[row, 4] as Excel.Range).Value2;
+            account.Permission = (int)(range.Cells[row, 5] as Excel.Range).Value2;
+
+            return account;
         }
 
         public static List<Account> GetDataFromExcel(string path, int worksheetNumber=1)
@@ -54,26 +55,20 @@ namespace QLSV.Lib
             xlWorkBook = xlApp.Workbooks.Open(path, 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
             xlWorksheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(worksheetNumber);
 
-            int rw = GetNumberOfRows(xlWorksheet);
+            Excel.Range range = GetRangeOfWorksheet(xlWorksheet);
+
+            int rw = GetNumberOfRows(range);
 
             List<Account> listAccounts = new List<Account>();
 
             for (int rCnt = 2; rCnt <= rw; rCnt++)
             {
-                string mssv = (string)(range.Cells[rCnt, 1] as Excel.Range).Value2;
-                string ten = (string)(range.Cells[rCnt, 2] as Excel.Range).Value2;
-                string sdt = (string)(range.Cells[rCnt, 3] as Excel.Range).Value2;
-                if (mssv == null)
-                {
+                Account account = GetAccountFromWorksheet(range, rw);
+                if (account.Username == "")
                     continue;
-                }
-                //listAccounts.Add(account);
+                listAccounts.Add(account);
             }
 
-            foreach (Account account in listAccounts)
-            {
-                MessageBox.Show(account.ToString());
-            }
             GC.Collect();
             GC.WaitForPendingFinalizers();
             Marshal.ReleaseComObject(xlWorksheet);
@@ -88,28 +83,28 @@ namespace QLSV.Lib
             return listAccounts;
         }
         //ham write data
-        static void Main(string[] args  )
-        {
-            Excel._Application myExcelApp;
-            Excel.Workbooks myExcelWorkbooks;
-            Excel.Workbook myExcelWorkbook;
-            // Excel ._Worksheet myExccelWorksheetToChange;
-            object misValue = System.Reflection.Missing.Value;
+        //static void Main(string[] args  )
+        //{
+        //    Excel._Application myExcelApp;
+        //    Excel.Workbooks myExcelWorkbooks;
+        //    Excel.Workbook myExcelWorkbook;
+        //    // Excel ._Worksheet myExccelWorksheetToChange;
+        //    object misValue = System.Reflection.Missing.Value;
 
-            myExcelApp = new Excel.ApplicationClass();
-            myExcelApp.Visible = true;
-            myExcelWorkbooks = myExcelApp.Workbooks;
-            String fileName = path;
-            myExcelWorkbook = myExcelWorkbooks.Open(fileName, misValue, misValue, misValue, misValue,
-            misValue, misValue, misValue, misValue, misValue, misValue, misValue, misValue, misValue, misValue);
+        //    myExcelApp = new Excel.Application();
+        //    myExcelApp.Visible = true;
+        //    myExcelWorkbooks = myExcelApp.Workbooks;
+        //    String fileName = path;
+        //    myExcelWorkbook = myExcelWorkbooks.Open(fileName, misValue, misValue, misValue, misValue,
+        //    misValue, misValue, misValue, misValue, misValue, misValue, misValue, misValue, misValue, misValue);
 
-            Excel.Worksheet myExcelWorksheet = (Excel.Worksheet)myExcelWorkbook.ActiveSheet;
+        //    Excel.Worksheet myExcelWorksheet = (Excel.Worksheet)myExcelWorkbook.ActiveSheet;
 
-            String cellFormulaAsString = myExcelWorksheet.get_Range("A2", misValue).Formula.ToString();
+        //    String cellFormulaAsString = myExcelWorksheet.get_Range("A2", misValue).Formula.ToString();
 
-            myExcelWorksheet.get_Range("A2", misValue).Formula = Console.ReadLine();
+        //    myExcelWorksheet.get_Range("A2", misValue).Formula = Console.ReadLine();
 
-        }
+        //}
 
     }
 }

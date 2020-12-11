@@ -28,3 +28,13 @@ C:\git\QLSV.Console\obj\Debug\QLSV.Console.csproj.CoreCompileInputs.cache
 C:\git\QLSV.Console\obj\Debug\QLSV.Console.csproj.CopyComplete
 C:\git\QLSV.Console\obj\Debug\QLSV.Console.exe
 C:\git\QLSV.Console\obj\Debug\QLSV.Console.pdb
+D:\BCat22\DoAnCSharp\QLSV.Console\bin\Debug\QLSV.Console.exe.config
+D:\BCat22\DoAnCSharp\QLSV.Console\bin\Debug\QLSV.Console.exe
+D:\BCat22\DoAnCSharp\QLSV.Console\bin\Debug\QLSV.Console.pdb
+D:\BCat22\DoAnCSharp\QLSV.Console\bin\Debug\QLSV.Lib.dll
+D:\BCat22\DoAnCSharp\QLSV.Console\bin\Debug\QLSV.Lib.pdb
+D:\BCat22\DoAnCSharp\QLSV.Console\obj\Debug\QLSV.Console.csprojAssemblyReference.cache
+D:\BCat22\DoAnCSharp\QLSV.Console\obj\Debug\QLSV.Console.csproj.CoreCompileInputs.cache
+D:\BCat22\DoAnCSharp\QLSV.Console\obj\Debug\QLSV.Console.csproj.CopyComplete
+D:\BCat22\DoAnCSharp\QLSV.Console\obj\Debug\QLSV.Console.exe
+D:\BCat22\DoAnCSharp\QLSV.Console\obj\Debug\QLSV.Console.pdb
