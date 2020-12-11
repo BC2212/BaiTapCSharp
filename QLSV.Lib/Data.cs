@@ -14,13 +14,13 @@ namespace QLSV.Lib
 {
     public class Data
     {
-        private static string path = string.Format(@"{0}\data.xlsx", Application.StartupPath);
         private static Excel.Application xlApp;
         private static Excel.Workbook xlWorkBook;
         private static Excel.Worksheet xlWorksheet;
         
         //Trả về range của một worksheet
-        private static Excel.Range GetRangeOfWorksheet(Excel.Worksheet worksheet) {
+        private static Excel.Range GetRangeOfWorksheet(Excel.Worksheet worksheet)
+        {
             return worksheet.UsedRange;
         }
 
@@ -35,13 +35,24 @@ namespace QLSV.Lib
         {
             return range.Columns.Count;
         }
-
-        public static List<Account> GetDataFromExcel()
+        
+        //Hàm lấy dữ liệu cho Account
+        private static Account GetAccountFromWorksheet(Excel.Range range, int row)
         {
+            string username = (string)(range.Cells[row, 1] as Excel.Range).Value2;
+            string password = (string)(range.Cells[row, 2] as Excel.Range).Value2;
+            string salt = (string)(range.Cells[row, 3] as Excel.Range).Value2;
+            byte type = (byte)(range.Cells[row, 4] as Excel.Range).Value2;
+            int permission = (int)(range.Cells[row, 5] as Excel.Range).Value2;
+            
+            return new Account(Username=username, Password=password, salt=salt, Type=type, Permission=permission);
+        }
 
+        public static List<Account> GetDataFromExcel(string path, int worksheetNumber=1)
+        {
             xlApp = new Excel.Application();
             xlWorkBook = xlApp.Workbooks.Open(path, 0, true, 5, "", "", true, Microsoft.Office.Interop.Excel.XlPlatform.xlWindows, "\t", false, false, 0, true, 1, 0);
-            xlWorksheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+            xlWorksheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(worksheetNumber);
 
             int rw = GetNumberOfRows(xlWorksheet);
 
