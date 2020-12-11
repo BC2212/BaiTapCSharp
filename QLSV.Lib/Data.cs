@@ -49,6 +49,9 @@ namespace QLSV.Lib
             return account;
         }
 
+        //Hàm lấy dữ liệu cho Sinh viên
+        
+
         public static List<Account> GetDataFromExcel(string path, int worksheetNumber=1)
         {
             xlApp = new Excel.Application();
@@ -74,8 +77,6 @@ namespace QLSV.Lib
             Marshal.ReleaseComObject(xlWorksheet);
             xlWorkBook.Close();
             Marshal.ReleaseComObject(xlWorkBook);
-            //xlWorkBook.Close(true, null, null);
-            //xlApp.Quit();
             Marshal.ReleaseComObject(xlWorksheet);
             Marshal.ReleaseComObject(xlWorkBook);
             Marshal.ReleaseComObject(xlApp);

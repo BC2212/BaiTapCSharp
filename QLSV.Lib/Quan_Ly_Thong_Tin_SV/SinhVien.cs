@@ -8,52 +8,85 @@ namespace QLSV.Lib.Quan_Ly_Thong_Tin_SV
 {
     public class SinhVien
     {
-        private String maSV, hoTenSV, ngaySinh, gioiTinh, diaChi, lop, khoa, sdt, gmail;
+        private string maSV;
+        private string hoTen;
+        private DateTime ngaySinh;
+        private bool gioiTinh;
+        private string diaChi;
+        private string khoa;
+        private string lop;
+        private string sdt;
+        private string email;
 
-        public String MaSV
+        public string MaSV { get => maSV; set => maSV = value; }
+        public string HoTen { get => hoTen; set => hoTen = value; }
+        public DateTime NgaySinh { get => ngaySinh; set => ngaySinh = value; }
+        public bool GioiTinh { get => gioiTinh; set => gioiTinh = value; }
+        public string DiaChi { get => diaChi; set => diaChi = value; }
+        public string Khoa { get => khoa; set => khoa = value; }
+        public string Lop { get => lop; set => lop = value; }
+        public string Sdt { get => sdt; set => sdt = value; }
+        public string Email { get => email; set => email = value; }
+
+        public SinhVien()
         {
-            get { return maSV; }
-            set { maSV = value; }
+            this.MaSV = "";
+            this.HoTen = "";
+            this.NgaySinh = new DateTime();
+            this.GioiTinh = false;
+            this.DiaChi = "";
+            this.Khoa = "";
+            this.Lop = "";
+            this.Sdt = "";
+            this.Email = "";
         }
-        public String HoTenSV
+
+        public SinhVien(string maSV, string hoTen, DateTime ngaySinh, bool gioiTinh, string diaChi, string khoa, string lop, string sdt, string email)
         {
-            get { return hoTenSV; }
-            set { hoTenSV = value; }
+            this.MaSV = maSV;
+            this.HoTen = hoTen;
+            this.NgaySinh = ngaySinh;
+            this.GioiTinh = gioiTinh;
+            this.DiaChi = diaChi;
+            this.Khoa = khoa;
+            this.Lop = lop;
+            this.Sdt = sdt;
+            this.Email = email;
         }
-        public String NgaySinh
+
+        public void ThemSinhVien(ref List<SinhVien> lSV, SinhVien sv)
         {
-            get { return ngaySinh; }
-            set { ngaySinh = value; }
+            lSV.Add(sv);
         }
-        public String GioiTinh
+
+        //maSV Ma Sinh Vien xoa tu list
+        public void XoaSinhVien(ref List<SinhVien> lSV, String maSV)
         {
-            get { return gioiTinh; }
-            set { gioiTinh = value; }
+            int count = 0;
+            foreach (SinhVien item in lSV)
+            {
+                if (item.MaSV == maSV)
+                {
+                    lSV.RemoveAt(count);
+                    break;
+                }
+                count++;
+            }
         }
-        public String DiaChi
+
+        //sv Data 1 SinhVien
+        public void SuaSinhVien(ref List<SinhVien> lSV, SinhVien sv)
         {
-            get { return diaChi; }
-            set { diaChi = value; }
-        }
-        public String Lop
-        {
-            get { return lop; }
-            set { lop = value; }
-        }
-        public String Khoa
-        {
-            get { return khoa; }
-            set { khoa = value; }
-        }
-        public String SDT
-        {
-            get { return sdt; }
-            set { sdt = value; }
-        }
-        public String Gmail
-        {
-            get { return gmail; }
-            set { gmail = value; }
+            int count = 0;
+            foreach (SinhVien item in lSV)
+            {
+                if (item.MaSV == sv.MaSV)
+                {
+                    lSV[count] = sv;
+                    break;
+                }
+                count++;
+            }
         }
     }
 }
