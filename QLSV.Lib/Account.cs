@@ -23,7 +23,7 @@ namespace QLSV.Lib
     {
         public string Username;
         private string Password { get; set; }
-        private string salt;
+        private string salt {get; set;}
         private int Permission { get; set; }
         
 
