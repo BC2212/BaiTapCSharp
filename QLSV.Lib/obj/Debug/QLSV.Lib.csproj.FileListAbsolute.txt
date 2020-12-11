@@ -16,3 +16,6 @@ C:\git\QLSV.Lib\obj\Debug\QLSV.Lib.csproj.ResolveComReference.cache
 C:\git\QLSV.Lib\obj\Debug\QLSV.Lib.csproj.CoreCompileInputs.cache
 C:\git\QLSV.Lib\obj\Debug\QLSV.Lib.dll
 C:\git\QLSV.Lib\obj\Debug\QLSV.Lib.pdb
+C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.csprojAssemblyReference.cache
+C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.dll
+C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.pdb
