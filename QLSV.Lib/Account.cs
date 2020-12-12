@@ -1,9 +1,12 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using Microsoft.Office.Core;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 
 namespace QLSV.Lib
@@ -19,16 +22,16 @@ namespace QLSV.Lib
     public class Account
     {
         public string Username;
-        private string Password { get; set; }
-        private string salt;
-        private int Permission { get; set; }
-        
+        public string Password;
+        public string Salt;
+        public int Permission;
+
 
         //Loại tài khoản: 0-user, 1-admin, 2-sa
-            //Sa: tất cả quyền, bao gồm xóa, tạo tài khoản addmin
-            //Admin: có thể thêm, sửa, xóa thông tin sinh viên
-            //User: chỉ xem hoặc chỉnh sửa thông tin cá nhân
-        public byte Type { get; set; }
+        //Sa: tất cả quyền, bao gồm xóa, tạo tài khoản addmin
+        //Admin: có thể thêm, sửa, xóa thông tin sinh viên
+        //User: chỉ xem hoặc chỉnh sửa thông tin cá nhân
+        public byte Type;
 
         private static readonly Random rand = new Random();
         private static readonly SHA512 shaM = new SHA512Managed();
@@ -37,7 +40,7 @@ namespace QLSV.Lib
             Username = "";
             Password = "";
             Type = 0;
-            salt = "";
+            Salt = "";
             Permission = 0;
         }
 
@@ -45,8 +48,8 @@ namespace QLSV.Lib
         public Account(string username, string pre_encryptedPasswd)
         {
             Username = username;
-            salt = CreateSalt();
-            Password = CreatePassword(pre_encryptedPasswd, salt);
+            Salt = CreateSalt();
+            Password = CreatePassword(pre_encryptedPasswd, Salt);
             Type = 0;
             Permission = 3;
         }
@@ -55,8 +58,8 @@ namespace QLSV.Lib
         public Account(string username, byte type, int permission, string pre_encryptedPasswd = "12345678")
         {
             Username = username;
-            salt = CreateSalt();
-            Password = CreatePassword(pre_encryptedPasswd, salt);
+            Salt = CreateSalt();
+            Password = CreatePassword(pre_encryptedPasswd, Salt);
             Type = type;
             Permission = permission;
         }
@@ -141,7 +144,7 @@ namespace QLSV.Lib
         {
             int index = SearchIndexOfAccountByUsername(listAccounts, username);
 
-            string encryptedPasswd = EncryptPassword(passwd, listAccounts[index].salt);
+            string encryptedPasswd = EncryptPassword(passwd, listAccounts[index].Salt);
 
             return listAccounts[index].Password.Equals(encryptedPasswd);
         }
@@ -149,7 +152,7 @@ namespace QLSV.Lib
         //Kiểm tra password khi đã biết chính xac index của account
         private static bool CheckPassword(List<Account> listAccounts, string passwd, int index)
         {
-            string encryptedPasswd = EncryptPassword(passwd, listAccounts[index].salt);
+            string encryptedPasswd = EncryptPassword(passwd, listAccounts[index].Salt);
 
             return listAccounts[index].Password.Equals(encryptedPasswd);
         }

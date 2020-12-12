@@ -26,3 +26,12 @@ F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\bin\Debug\ThongTinSV.pdb
 F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\bin\Debug\QLSV.Lib.dll
 F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\bin\Debug\QLSV.Lib.pdb
 F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\obj\Debug\QLSV.Form.csproj.CopyComplete
+C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\ThongTinSV\obj\Debug\QLSV.Form.csprojAssemblyReference.cache
+C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\ThongTinSV\obj\Debug\ThongTinSV.Properties.Resources.resources
+C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\ThongTinSV\obj\Debug\ThongTinSV.Login.resources
+C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\ThongTinSV\obj\Debug\ThongTinSV.ThongTinSV.resources
+C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\ThongTinSV\obj\Debug\ThongTinSV.TimKiem1.resources
+C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\ThongTinSV\obj\Debug\QLSV.Form.csproj.GenerateResource.cache
+C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\ThongTinSV\obj\Debug\QLSV.Form.csproj.CoreCompileInputs.cache
+C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\ThongTinSV\obj\Debug\ThongTinSV.exe
+C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\ThongTinSV\obj\Debug\ThongTinSV.pdb
