@@ -8,17 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLSV.Lib;
-using QLSV.Lib.Quan_Ly_Thong_Tin_SV;
 
 namespace ThongTinSV
 {
     public partial class ThongTinSV : Form
     {
-        List<SinhVien> SV = new List<SinhVien>();
+        public List<SinhVien> ListSinhVien;
+
         public ThongTinSV()
         {
-            InitializeComponent();
+
         }
+
+        private void GetMessage(List<SinhVien> Message)
+        {
+            ListSinhVien = Message;
+        }
+
 
         private void ThongTinSV_Load(object sender, EventArgs e)
         {
@@ -69,6 +75,16 @@ namespace ThongTinSV
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuTTSV_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void txtMSSV_TextChanged(object sender, EventArgs e)
         {
 
         }

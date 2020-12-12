@@ -14,15 +14,19 @@ namespace ThongTinSV
     public partial class Login : Form
     {
         public static List<Account> listAccounts;
+        public static List<SinhVien> listSinhVien;
 
         public Login()
         {
             InitializeComponent();
             //btnLogin.Location = Point(Form.Size[0])
-            string path = string.Format($@"{Application.StartupPath}\dataAccount.xlsx");
+            string accountPath = string.Format($@"{Application.StartupPath}\dataAccount.xlsx");
+            string sinhVienPath = string.Format($@"{Application.StartupPath}\dataSinhVien.xlsx");
 
-            listAccounts = Data.GetDataFromExcel(path);
+            listAccounts = Data.GetAccountsFromExcel(accountPath);
+            listSinhVien = Data.GetSinhViensFromExcel(sinhVienPath);
         }
+
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();

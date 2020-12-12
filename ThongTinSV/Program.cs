@@ -18,8 +18,7 @@ namespace ThongTinSV
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new ThongTinSV());
-            Login frmLogin = new Login();
-            Application.Run(frmLogin);
+            Application.Run(new Login());
         }
     }
 }

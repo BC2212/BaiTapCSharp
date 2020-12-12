@@ -56,10 +56,10 @@
             this.mnuDangXuat = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuThoat = new System.Windows.Forms.ToolStripMenuItem();
             this.plTiemKiem = new System.Windows.Forms.Panel();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.lstvTiemKiem = new System.Windows.Forms.ListView();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.mnuTTSV.SuspendLayout();
             this.plTiemKiem.SuspendLayout();
             this.SuspendLayout();
@@ -117,6 +117,7 @@
             this.txtMSSV.Name = "txtMSSV";
             this.txtMSSV.Size = new System.Drawing.Size(150, 20);
             this.txtMSSV.TabIndex = 6;
+            this.txtMSSV.TextChanged += new System.EventHandler(this.txtMSSV_TextChanged);
             // 
             // lblGioiTinh
             // 
@@ -272,6 +273,7 @@
             this.mnuTTSV.Name = "mnuTTSV";
             this.mnuTTSV.Size = new System.Drawing.Size(784, 24);
             this.mnuTTSV.TabIndex = 23;
+            this.mnuTTSV.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.mnuTTSV_ItemClicked);
             // 
             // mnu
             // 
@@ -286,21 +288,21 @@
             // mnuTiemKiem
             // 
             this.mnuTiemKiem.Name = "mnuTiemKiem";
-            this.mnuTiemKiem.Size = new System.Drawing.Size(180, 22);
+            this.mnuTiemKiem.Size = new System.Drawing.Size(127, 22);
             this.mnuTiemKiem.Text = "Tiềm kiếm";
             this.mnuTiemKiem.Click += new System.EventHandler(this.mnuTiemKiem_Click);
             // 
             // mnuDangXuat
             // 
             this.mnuDangXuat.Name = "mnuDangXuat";
-            this.mnuDangXuat.Size = new System.Drawing.Size(180, 22);
+            this.mnuDangXuat.Size = new System.Drawing.Size(127, 22);
             this.mnuDangXuat.Text = "Đăng xuất";
             this.mnuDangXuat.Click += new System.EventHandler(this.mnuDangXuat_Click);
             // 
             // mnuThoat
             // 
             this.mnuThoat.Name = "mnuThoat";
-            this.mnuThoat.Size = new System.Drawing.Size(180, 22);
+            this.mnuThoat.Size = new System.Drawing.Size(127, 22);
             this.mnuThoat.Text = "Thoát";
             this.mnuThoat.Click += new System.EventHandler(this.mnuThoat_Click);
             // 
@@ -310,11 +312,25 @@
             this.plTiemKiem.Controls.Add(this.lstvTiemKiem);
             this.plTiemKiem.Controls.Add(this.btnTimKiem);
             this.plTiemKiem.Controls.Add(this.txtTimKiem);
-            this.plTiemKiem.Location = new System.Drawing.Point(54, 12);
+            this.plTiemKiem.Location = new System.Drawing.Point(40, 385);
             this.plTiemKiem.Name = "plTiemKiem";
             this.plTiemKiem.Size = new System.Drawing.Size(689, 379);
             this.plTiemKiem.TabIndex = 24;
             this.plTiemKiem.Visible = false;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.Color.Red;
+            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnThoat.Location = new System.Drawing.Point(614, 3);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(75, 35);
+            this.btnThoat.TabIndex = 10;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // lstvTiemKiem
             // 
@@ -348,20 +364,6 @@
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(200, 35);
             this.txtTimKiem.TabIndex = 7;
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.BackColor = System.Drawing.Color.Red;
-            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnThoat.Location = new System.Drawing.Point(614, 3);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 35);
-            this.btnThoat.TabIndex = 10;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = false;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // ThongTinSV
             // 
