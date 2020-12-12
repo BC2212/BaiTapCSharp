@@ -51,7 +51,7 @@ namespace QLSV.Lib
 
         //Hàm lấy dữ liệu cho Sinh viên
         
-
+        //Hàm lấy dữ liệu từ excel
         public static List<Account> GetDataFromExcel(string path, int worksheetNumber=1)
         {
             xlApp = new Excel.Application();

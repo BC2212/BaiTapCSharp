@@ -33,18 +33,44 @@ namespace ThongTinSV
         {
             if(txtMSSV.Text != "" && txtName.Text != "" && txtNgaySinh.Text != "" && txtGioiTinh.Text != "" && txtDiaChi.Text != "" && txtLop.Text != "" && txtKhoa.Text != "" && txtSDT.Text != "" && txtEmail.Text != "")
             {
-                SinhVien sv = new SinhVien();
-                sv.MaSV = txtMSSV.Text;
-                sv.HoTenSV = txtName.Text;
-                sv.NgaySinh = txtNgaySinh.Text;
-                sv.GioiTinh = txtGioiTinh.Text;
-                sv.DiaChi = txtDiaChi.Text;
-                sv.Lop = txtLop.Text;
-                sv.Khoa = txtKhoa.Text;
-                sv.SDT = txtSDT.Text;
-                sv.Gmail = txtEmail.Text;
-                SV.Add(sv);
+                //SinhVien sv = new SinhVien();
+                //sv.MaSV = txtMSSV.Text;
+                //sv.HoTenSV = txtName.Text;
+                //sv.NgaySinh = txtNgaySinh.Text;
+                //sv.GioiTinh = txtGioiTinh.Text;
+                //sv.DiaChi = txtDiaChi.Text;
+                //sv.Lop = txtLop.Text;
+                //sv.Khoa = txtKhoa.Text;
+                //sv.SDT = txtSDT.Text;
+                //sv.Gmail = txtEmail.Text;
+                //SV.Add(sv);
             }
+        }
+
+        private void mnuDangXuat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void mnuThoat_Click(object sender, EventArgs e)
+        {
+            Close();
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void mnuTiemKiem_Click(object sender, EventArgs e)
+        {
+            plTiemKiem.Visible = true;
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            plTiemKiem.Visible = false;
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

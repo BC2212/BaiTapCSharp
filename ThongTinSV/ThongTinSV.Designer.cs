@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThongTinSV));
             this.lblMaSV = new System.Windows.Forms.Label();
             this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
@@ -49,27 +50,25 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.mnuTTSV = new System.Windows.Forms.MenuStrip();
             this.mnu = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTiemKiem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDangXuat = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuThoat = new System.Windows.Forms.ToolStripMenuItem();
+            this.plTiemKiem = new System.Windows.Forms.Panel();
+            this.lstvTiemKiem = new System.Windows.Forms.ListView();
+            this.btnTimKiem = new System.Windows.Forms.Button();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.mnuTTSV.SuspendLayout();
+            this.plTiemKiem.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblMaSV
             // 
             this.lblMaSV.AutoSize = true;
             this.lblMaSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaSV.Location = new System.Drawing.Point(196, 9);
+            this.lblMaSV.Location = new System.Drawing.Point(247, 24);
             this.lblMaSV.Name = "lblMaSV";
             this.lblMaSV.Size = new System.Drawing.Size(103, 20);
             this.lblMaSV.TabIndex = 1;
@@ -114,7 +113,7 @@
             // txtMSSV
             // 
             this.txtMSSV.Enabled = false;
-            this.txtMSSV.Location = new System.Drawing.Point(325, 9);
+            this.txtMSSV.Location = new System.Drawing.Point(376, 24);
             this.txtMSSV.Name = "txtMSSV";
             this.txtMSSV.Size = new System.Drawing.Size(150, 20);
             this.txtMSSV.TabIndex = 6;
@@ -229,6 +228,7 @@
             // 
             // btnThem
             // 
+            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Location = new System.Drawing.Point(150, 329);
             this.btnThem.Name = "btnThem";
@@ -241,6 +241,7 @@
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.Color.Red;
+            this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.SystemColors.Control;
             this.btnXoa.Location = new System.Drawing.Point(550, 329);
@@ -249,9 +250,11 @@
             this.btnXoa.TabIndex = 21;
             this.btnXoa.Text = "Xoá";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
+            this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Location = new System.Drawing.Point(350, 329);
             this.btnSua.Name = "btnSua";
@@ -260,63 +263,9 @@
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8,
-            this.columnHeader9});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(13, 385);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(759, 164);
-            this.listView1.TabIndex = 22;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "MSSV";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Họ và Tên";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Ngày sinh";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Giới tính";
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Địa chỉ";
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "Lớp";
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Khoa";
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "SĐT";
-            // 
-            // columnHeader9
-            // 
-            this.columnHeader9.Text = "Email";
-            // 
             // mnuTTSV
             // 
+            this.mnuTTSV.BackColor = System.Drawing.SystemColors.Control;
             this.mnuTTSV.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnu});
             this.mnuTTSV.Location = new System.Drawing.Point(0, 0);
@@ -327,7 +276,9 @@
             // mnu
             // 
             this.mnu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuTiemKiem});
+            this.mnuTiemKiem,
+            this.mnuDangXuat,
+            this.mnuThoat});
             this.mnu.Name = "mnu";
             this.mnu.Size = new System.Drawing.Size(48, 20);
             this.mnu.Text = "Menu";
@@ -337,13 +288,87 @@
             this.mnuTiemKiem.Name = "mnuTiemKiem";
             this.mnuTiemKiem.Size = new System.Drawing.Size(180, 22);
             this.mnuTiemKiem.Text = "Tiềm kiếm";
+            this.mnuTiemKiem.Click += new System.EventHandler(this.mnuTiemKiem_Click);
+            // 
+            // mnuDangXuat
+            // 
+            this.mnuDangXuat.Name = "mnuDangXuat";
+            this.mnuDangXuat.Size = new System.Drawing.Size(180, 22);
+            this.mnuDangXuat.Text = "Đăng xuất";
+            this.mnuDangXuat.Click += new System.EventHandler(this.mnuDangXuat_Click);
+            // 
+            // mnuThoat
+            // 
+            this.mnuThoat.Name = "mnuThoat";
+            this.mnuThoat.Size = new System.Drawing.Size(180, 22);
+            this.mnuThoat.Text = "Thoát";
+            this.mnuThoat.Click += new System.EventHandler(this.mnuThoat_Click);
+            // 
+            // plTiemKiem
+            // 
+            this.plTiemKiem.Controls.Add(this.btnThoat);
+            this.plTiemKiem.Controls.Add(this.lstvTiemKiem);
+            this.plTiemKiem.Controls.Add(this.btnTimKiem);
+            this.plTiemKiem.Controls.Add(this.txtTimKiem);
+            this.plTiemKiem.Location = new System.Drawing.Point(54, 12);
+            this.plTiemKiem.Name = "plTiemKiem";
+            this.plTiemKiem.Size = new System.Drawing.Size(689, 379);
+            this.plTiemKiem.TabIndex = 24;
+            this.plTiemKiem.Visible = false;
+            // 
+            // lstvTiemKiem
+            // 
+            this.lstvTiemKiem.BackColor = System.Drawing.SystemColors.Control;
+            this.lstvTiemKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lstvTiemKiem.HideSelection = false;
+            this.lstvTiemKiem.Location = new System.Drawing.Point(0, 45);
+            this.lstvTiemKiem.Name = "lstvTiemKiem";
+            this.lstvTiemKiem.Size = new System.Drawing.Size(689, 334);
+            this.lstvTiemKiem.TabIndex = 9;
+            this.lstvTiemKiem.UseCompatibleStateImageBehavior = false;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnTimKiem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiem.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
+            this.btnTimKiem.Location = new System.Drawing.Point(209, 3);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(35, 35);
+            this.btnTimKiem.TabIndex = 8;
+            this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTimKiem.UseVisualStyleBackColor = false;
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(3, 3);
+            this.txtTimKiem.Multiline = true;
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(200, 35);
+            this.txtTimKiem.TabIndex = 7;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.Color.Red;
+            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnThoat.Location = new System.Drawing.Point(614, 3);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(75, 35);
+            this.btnThoat.TabIndex = 10;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // ThongTinSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.plTiemKiem);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
@@ -372,6 +397,8 @@
             this.Load += new System.EventHandler(this.ThongTinSV_Load);
             this.mnuTTSV.ResumeLayout(false);
             this.mnuTTSV.PerformLayout();
+            this.plTiemKiem.ResumeLayout(false);
+            this.plTiemKiem.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,18 +426,15 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.MenuStrip mnuTTSV;
         private System.Windows.Forms.ToolStripMenuItem mnu;
         private System.Windows.Forms.ToolStripMenuItem mnuTiemKiem;
+        private System.Windows.Forms.ToolStripMenuItem mnuDangXuat;
+        private System.Windows.Forms.ToolStripMenuItem mnuThoat;
+        private System.Windows.Forms.Panel plTiemKiem;
+        private System.Windows.Forms.ListView lstvTiemKiem;
+        private System.Windows.Forms.Button btnTimKiem;
+        private System.Windows.Forms.TextBox txtTimKiem;
+        private System.Windows.Forms.Button btnThoat;
     }
 }

@@ -34,7 +34,6 @@
             this.lblLoginTaiKhoan = new System.Windows.Forms.Label();
             this.lblLoginMatKhau = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.lblQuenMatKhau = new System.Windows.Forms.LinkLabel();
             this.btnThoat = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -49,10 +48,11 @@
             this.lblTitleQLSV.TabIndex = 0;
             this.lblTitleQLSV.Text = "Quản lý sinh viên";
             this.lblTitleQLSV.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblTitleQLSV.Click += new System.EventHandler(this.lblTitleQLSV_Click);
             // 
             // txtTaiKhoan
             // 
+            this.txtTaiKhoan.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.txtTaiKhoan.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
             this.txtTaiKhoan.BackColor = System.Drawing.SystemColors.Window;
             this.txtTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -75,7 +75,6 @@
             this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(200, 40);
             this.txtMatKhau.TabIndex = 2;
-            this.txtMatKhau.TextChanged += new System.EventHandler(this.tbloginMatKhau_TextChanged);
             // 
             // lblLoginTaiKhoan
             // 
@@ -100,6 +99,7 @@
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.Window;
             this.btnLogin.Location = new System.Drawing.Point(50, 183);
@@ -110,23 +110,10 @@
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // lblQuenMatKhau
-            // 
-            this.lblQuenMatKhau.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblQuenMatKhau.AutoSize = true;
-            this.lblQuenMatKhau.Location = new System.Drawing.Point(264, 236);
-            this.lblQuenMatKhau.Name = "lblQuenMatKhau";
-            this.lblQuenMatKhau.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblQuenMatKhau.Size = new System.Drawing.Size(86, 13);
-            this.lblQuenMatKhau.TabIndex = 6;
-            this.lblQuenMatKhau.TabStop = true;
-            this.lblQuenMatKhau.Text = "Quên mật khẩu?";
-            this.lblQuenMatKhau.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblQuenMatKhau.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblQuenMatKhau_LinkClicked);
-            // 
             // btnThoat
             // 
             this.btnThoat.BackColor = System.Drawing.Color.Red;
+            this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.SystemColors.Window;
             this.btnThoat.Location = new System.Drawing.Point(297, 405);
@@ -144,7 +131,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 461);
             this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.lblQuenMatKhau);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblLoginMatKhau);
             this.Controls.Add(this.lblLoginTaiKhoan);
@@ -153,7 +139,6 @@
             this.Controls.Add(this.lblTitleQLSV);
             this.Name = "Login";
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.SignIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,7 +152,6 @@
         private System.Windows.Forms.Label lblLoginTaiKhoan;
         private System.Windows.Forms.Label lblLoginMatKhau;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.LinkLabel lblQuenMatKhau;
         private System.Windows.Forms.Button btnThoat;
     }
 }

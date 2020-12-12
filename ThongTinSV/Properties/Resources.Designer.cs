@@ -59,15 +59,5 @@ namespace ThongTinSV.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _83625191_2704996779733364_3080975140227823345_o {
-            get {
-                object obj = ResourceManager.GetObject("83625191_2704996779733364_3080975140227823345_o", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
