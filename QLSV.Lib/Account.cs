@@ -21,6 +21,8 @@ namespace QLSV.Lib
 
     public class Account
     {
+        //Index là vị trí dòng của một account khi được xuất ra từ excel.
+        public int Index;
         public string Username;
         public string Password;
         public string Salt;
@@ -37,6 +39,7 @@ namespace QLSV.Lib
         private static readonly SHA512 shaM = new SHA512Managed();
 
         public Account() {
+            Index = 0;
             Username = "";
             Password = "";
             Type = 0;
@@ -45,8 +48,9 @@ namespace QLSV.Lib
         }
 
         //Dùng khi user tự tạo account
-        public Account(string username, string pre_encryptedPasswd)
+        public Account(string username, string pre_encryptedPasswd, int index=0)
         {
+            Index = index;
             Username = username;
             Salt = CreateSalt();
             Password = CreatePassword(pre_encryptedPasswd, Salt);
@@ -55,8 +59,9 @@ namespace QLSV.Lib
         }
 
         //Dùng khi admin tạo account
-        public Account(string username, byte type, int permission, string pre_encryptedPasswd = "12345678")
+        public Account(string username, byte type, int permission, string pre_encryptedPasswd = "123456", int index = 0)
         {
+            Index = index;
             Username = username;
             Salt = CreateSalt();
             Password = CreatePassword(pre_encryptedPasswd, Salt);
