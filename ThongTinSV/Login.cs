@@ -13,25 +13,14 @@ namespace ThongTinSV
 {
     public partial class Login : Form
     {
+        public static List<Account> listAccounts;
+
         public Login()
         {
             InitializeComponent();
-            //btnLogin.Location = Point(Form.Size[0])
-        }
+            string accountPath = string.Format($@"{Application.StartupPath}\dataAccount.xlsx");
 
-        private void SignIn_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTitleQLSV_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbloginMatKhau_TextChanged(object sender, EventArgs e)
-        {
-
+            listAccounts = Data.GetAccountsFromExcel(accountPath);
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -39,38 +28,38 @@ namespace ThongTinSV
             this.Close();
         }
 
+        private void ResetFormValue()
+        {
+            txtTaiKhoan.Text = "";
+            txtMatKhau.Text = "";
+            txtTaiKhoan.Focus();
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
+            //Biến checkLogin nhận giá trị từ hàm Login là permission của account
+            //Giá trị là -1: Sai tài khoản hoặc mật khẩu
+            int checkLogin = Account.LogIn(listAccounts, txtTaiKhoan.Text, txtMatKhau.Text);
 
-            List<Account> listAccounts = new List<Account>();
-
-            if(Account.LogIn(listAccounts, txtTaiKhoan.Text, txtMatKhau.Text) >= 0)
+            if(checkLogin >= 0)
             {
                 ThongTinSV frmThongTinSV = new ThongTinSV();
                 frmThongTinSV.Enabled = true;
+
+                frmThongTinSV.Sender(txtTaiKhoan.Text);
+
+                this.Hide();
                 frmThongTinSV.ShowDialog();
+                this.ResetFormValue();
+                this.Show();
             }
             else
             {
                 MessageBox.Show("Sai ten dang nhap hoac mat khau");
-                txtTaiKhoan.Text = "";
-                txtMatKhau.Text = "";
-                txtTaiKhoan.Focus();
             }
         }
 
         private void lblQuenMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void txtTaiKhoan_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTaoTaiKhoan_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
         }

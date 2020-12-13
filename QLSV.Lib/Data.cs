@@ -60,8 +60,15 @@ namespace QLSV.Lib
             sv.MaSV = (range.Cells[row, 1] as Excel.Range).Value2.ToString();
             sv.HoTen = (string)(range.Cells[row, 2] as Excel.Range).Value2;
 
-            string tmpNgaySinh = (string)(range.Cells[row, 3] as Excel.Range).Value2;
-            sv.NgaySinh = DateTime.ParseExact(tmpNgaySinh, sysDateFormat, CultureInfo.InvariantCulture);
+            try
+            {
+                string tmpNgaySinh = (string)(range.Cells[row, 3] as Excel.Range).Value2;
+                sv.NgaySinh = DateTime.ParseExact(tmpNgaySinh, sysDateFormat, CultureInfo.InvariantCulture);
+            }
+            catch (Exception)
+            {
+                sv.NgaySinh = DateTime.Now;
+            }
             
             sv.GioiTinh = (string)(range.Cells[row, 4] as Excel.Range).Value2;
             sv.DiaChi = (string)(range.Cells[row, 5] as Excel.Range).Value2;
@@ -89,7 +96,7 @@ namespace QLSV.Lib
 
             for (int rCnt = 2; rCnt <= rw; rCnt++)
             {
-                SinhVien sinhVien = GetSinhVien(range, rw);
+                SinhVien sinhVien = GetSinhVien(range, rCnt);
                 if (sinhVien.MaSV == "")
                     continue;
                 listSinhViens.Add(sinhVien);
@@ -122,7 +129,7 @@ namespace QLSV.Lib
 
             for (int rCnt = 2; rCnt <= rw; rCnt++)
             {
-                Account account = GetAccount(range, rw);
+                Account account = GetAccount(range, rCnt);
                 if (account.Username == "")
                     continue;
                 account.Index = rCnt;

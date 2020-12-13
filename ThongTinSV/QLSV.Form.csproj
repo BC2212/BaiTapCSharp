@@ -79,12 +79,6 @@
     <Compile Include="ThongTinSV.Designer.cs">
       <DependentUpon>ThongTinSV.cs</DependentUpon>
     </Compile>
-    <Compile Include="TimKiem1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TimKiem1.Designer.cs">
-      <DependentUpon>TimKiem1.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -101,9 +95,7 @@
     <EmbeddedResource Include="ThongTinSV.resx">
       <DependentUpon>ThongTinSV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TimKiem1.resx">
-      <DependentUpon>TimKiem1.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -124,9 +116,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\83625191_2704996779733364_3080975140227823345_o.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
@@ -137,6 +126,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

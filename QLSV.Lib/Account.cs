@@ -135,8 +135,8 @@ namespace QLSV.Lib
             return listAccounts.Exists(x => x.Username == username) == true ? true : false;
         }
 
-        //Hàm tìm index của một account
-        internal static int SearchIndexOfAccountByUsername(List<Account> listAccounts, string username)
+        //Hàm tìm index của một account trong list
+        public static int SearchIndexOfAccountByUsername(List<Account> listAccounts, string username)
         {
             return listAccounts.FindIndex(delegate (Account account)
             {
@@ -165,19 +165,15 @@ namespace QLSV.Lib
         //Đăng nhập
         public static int LogIn(List<Account> listAccounts, string username, string passwd)
         {
-            //Hàm trả về quyền và kết quả kiểm tra dùng để load form phù hợp
-            //-1: Đăng nhập thất bại, sai username hoặc mật khẩu
-            //0: Là user
-            //1: Là admin
-            //2: Là sa
-
+            //Hàm trả về permission và kết quả kiểm tra dùng để load form phù hợp
+            //-1: Sai tài khoản hoặc mật khẩu
             int index = SearchIndexOfAccountByUsername(listAccounts, username);
 
             if (index < 0)
                 return -1;
             else
             {
-                return CheckPassword(listAccounts, passwd, index) == true ? listAccounts[index].Type : -1;
+                return CheckPassword(listAccounts, passwd, index) == true ? listAccounts[index].Permission : -1;
             }
         }
 

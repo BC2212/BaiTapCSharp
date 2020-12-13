@@ -98,6 +98,14 @@ namespace QLSV.Lib
             }
         }
 
+        public static int IndexOfSinhVien(List<SinhVien> listSinhVien, string username)
+        {
+            return listSinhVien.FindIndex(delegate (SinhVien sinhVien)
+            {
+                return sinhVien.Username.Equals(username);
+            });
+        }
+
         public static void PrintAllSinhVien(List<SinhVien> listSinhVien)
         {
             foreach(SinhVien sinhvien in listSinhVien)
