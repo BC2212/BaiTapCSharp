@@ -135,8 +135,8 @@ namespace QLSV.Lib
             return listAccounts.Exists(x => x.Username == username) == true ? true : false;
         }
 
-        //Hàm tìm index của một account trong list
-        public static int SearchIndexOfAccountByUsername(List<Account> listAccounts, string username)
+        //Hàm tìm index của một account
+        internal static int SearchIndexOfAccountByUsername(List<Account> listAccounts, string username)
         {
             return listAccounts.FindIndex(delegate (Account account)
             {

@@ -17,10 +17,6 @@ namespace QLSV.Console
             //TestGetAccountFromExcel();
             //TestGetSinhVienFromExcel();
 
-            Account account = new Account("quynh", "minh");
-            System.Console.WriteLine(account.Password);
-            System.Console.WriteLine(account.Salt);
-
             System.Console.ReadKey();
         }
 

@@ -18,6 +18,7 @@ namespace ThongTinSV
         public Login()
         {
             InitializeComponent();
+
             string accountPath = string.Format($@"{Application.StartupPath}\dataAccount.xlsx");
 
             listAccounts = Data.GetAccountsFromExcel(accountPath);
@@ -41,7 +42,7 @@ namespace ThongTinSV
             //Giá trị là -1: Sai tài khoản hoặc mật khẩu
             int checkLogin = Account.LogIn(listAccounts, txtTaiKhoan.Text, txtMatKhau.Text);
 
-            if(checkLogin >= 0)
+            if (checkLogin >= 0)
             {
                 ThongTinSV frmThongTinSV = new ThongTinSV();
                 frmThongTinSV.Enabled = true;
@@ -58,19 +59,6 @@ namespace ThongTinSV
                 MessageBox.Show("Sai ten dang nhap hoac mat khau");
                 ResetFormValue();
             }
-        }
-        {
-
-        }
-
-        private void txtTaiKhoan_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTaoTaiKhoan_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
         }
     }
 }

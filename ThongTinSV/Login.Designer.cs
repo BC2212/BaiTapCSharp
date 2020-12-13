@@ -115,7 +115,7 @@
             this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnThoat.Location = new System.Drawing.Point(275, 258);
+            this.btnThoat.Location = new System.Drawing.Point(297, 261);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 44);
             this.btnThoat.TabIndex = 7;
@@ -128,7 +128,7 @@
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 336);
+            this.ClientSize = new System.Drawing.Size(384, 313);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblLoginMatKhau);

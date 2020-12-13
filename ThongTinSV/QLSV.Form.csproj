@@ -149,10 +149,7 @@
       <DependentUpon>ThongTinSV.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
-<<<<<<< HEAD
-=======
     <None Include="packages.config" />
->>>>>>> 8ca9f297bee7856992d847c96cb5ba59d0a87105
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

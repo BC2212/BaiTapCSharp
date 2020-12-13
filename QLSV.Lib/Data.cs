@@ -69,7 +69,7 @@ namespace QLSV.Lib
             {
                 sv.NgaySinh = DateTime.Now;
             }
-            
+
             sv.GioiTinh = (string)(range.Cells[row, 4] as Excel.Range).Value2;
             sv.DiaChi = (string)(range.Cells[row, 5] as Excel.Range).Value2;
             sv.Khoa = (string)(range.Cells[row, 6] as Excel.Range).Value2;

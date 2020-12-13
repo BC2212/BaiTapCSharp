@@ -37,8 +37,6 @@ namespace ThongTinSV
         private void ThongTinSV_Load(object sender, EventArgs e)
         {
             DisplaySinhVienDetail();
-            
-            
         }
 
         public void GetMessage(string username)
@@ -103,6 +101,31 @@ namespace ThongTinSV
             }
         }
 
+        private void ResetFormValue()
+        {
+            txtMSSV.Text = "";
+            txtName.Text = "";
+            txtNgaySinh.Text = "";
+            txtGioiTinh.Text = "";
+            txtDiaChi.Text = "";
+            txtLop.Text = "";
+            txtKhoa.Text = "";
+            txtSDT.Text = "";
+            txtEmail.Text = "";
+            txtMSSV.Focus();
+        }
+
+        private void mnuDangXuat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void mnuThoat_Click(object sender, EventArgs e)
+        {
+            Close();
+            System.Windows.Forms.Application.Exit();
+        }
+
         private void mnuTiemKiem_Click(object sender, EventArgs e)
         {
             plTiemKiem.Visible = true;
@@ -118,7 +141,6 @@ namespace ThongTinSV
 
         }
 
-
         private void txtMSSV_TextChanged(object sender, EventArgs e)
         {
             
@@ -127,11 +149,6 @@ namespace ThongTinSV
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             
-        }
-
-        private void plTiemKiem_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void mnuTTSV_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -243,5 +260,7 @@ namespace ThongTinSV
         {
 
         }
+
+        
     }
 }
