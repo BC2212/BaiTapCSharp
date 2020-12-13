@@ -69,7 +69,7 @@ namespace QLSV.Lib
         }
 
         //maSV Ma Sinh Vien xoa tu list
-        public void XoaSinhVien(ref List<SinhVien> lSV, String maSV)
+       public bool XoaSinhVien(ref List<SinhVien> lSV, String maSV)
         {
             int count = 0;
             foreach (SinhVien item in lSV)
@@ -77,10 +77,18 @@ namespace QLSV.Lib
                 if (item.MaSV == maSV)
                 {
                     lSV.RemoveAt(count);
+                    
                     break;
                 }
+              
                 count++;
             }
+            if (count < lSV.Count()) // đã xóa được sinh viên trả về true
+            {
+                return true;
+            }
+            else   // không xóa được, trả về false
+                return false;
         }
 
         //sv Data 1 SinhVien
@@ -96,6 +104,26 @@ namespace QLSV.Lib
                 }
                 count++;
             }
+        }
+        
+        public SinhVien TimKiemSinhVien(List<SinhVien> lSV, string maSV)
+        {
+            int count = 0;
+            foreach (SinhVien item in lSV)
+            {
+                if (item.MaSV == maSV)
+                {
+                    break;
+                }
+
+                count++;
+            }
+            if (count < lSV.Count()) // nếu có sinh viên thì trả về sv đó
+            {
+                return lSV[count];
+            }
+            else   // không thìm thấy sv trả về null
+                return null;
         }
 
         public static int IndexOfSinhVien(List<SinhVien> listSinhVien, string username)
