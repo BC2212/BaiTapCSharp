@@ -56,10 +56,19 @@ namespace ThongTinSV
             else
             {
                 MessageBox.Show("Sai ten dang nhap hoac mat khau");
+                ResetFormValue();
             }
         }
+        {
 
-        private void lblQuenMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        }
+
+        private void txtTaiKhoan_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTaoTaiKhoan_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
         }

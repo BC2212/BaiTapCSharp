@@ -34,6 +34,7 @@ C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\ThongTinSV\obj\Debug\QLSV.Form.csp
 C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\ThongTinSV\obj\Debug\QLSV.Form.csproj.CoreCompileInputs.cache
 C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\ThongTinSV\obj\Debug\ThongTinSV.exe
 C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\ThongTinSV\obj\Debug\ThongTinSV.pdb
+<<<<<<< HEAD
 D:\BCat22\DoAnCSharp\DoAnCSharp\ThongTinSV\bin\Debug\ThongTinSV.exe.config
 D:\BCat22\DoAnCSharp\DoAnCSharp\ThongTinSV\bin\Debug\ThongTinSV.exe
 D:\BCat22\DoAnCSharp\DoAnCSharp\ThongTinSV\bin\Debug\ThongTinSV.pdb
@@ -62,3 +63,8 @@ D:\BCat22\DoAnCSharp\ThongTinSV\obj\Debug\QLSV.Form.csproj.CoreCompileInputs.cac
 D:\BCat22\DoAnCSharp\ThongTinSV\obj\Debug\QLSV.Form.csproj.CopyComplete
 D:\BCat22\DoAnCSharp\ThongTinSV\obj\Debug\ThongTinSV.exe
 D:\BCat22\DoAnCSharp\ThongTinSV\obj\Debug\ThongTinSV.pdb
+=======
+F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\bin\Debug\Microsoft.Azure.Amqp.dll
+F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\bin\Debug\Ninject.dll
+F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\bin\Debug\Ninject.xml
+>>>>>>> 8ca9f297bee7856992d847c96cb5ba59d0a87105

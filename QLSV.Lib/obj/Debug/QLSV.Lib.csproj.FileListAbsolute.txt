@@ -27,6 +27,7 @@ D:\BCat22\DoAnCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.pdb
 D:\BCat22\DoAnCSharp\QLSV.Lib\bin\Debug\QLSV.Lib.dll
 D:\BCat22\DoAnCSharp\QLSV.Lib\bin\Debug\QLSV.Lib.pdb
 F:\Học Kì 5\C#\DoAnCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.csproj.ResolveComReference.cache
+<<<<<<< HEAD
 D:\BCat22\DoAnCSharp\DoAnCSharp\QLSV.Lib\bin\Debug\QLSV.Lib.dll
 D:\BCat22\DoAnCSharp\DoAnCSharp\QLSV.Lib\bin\Debug\QLSV.Lib.pdb
 D:\BCat22\DoAnCSharp\DoAnCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.csprojAssemblyReference.cache
@@ -34,3 +35,5 @@ D:\BCat22\DoAnCSharp\DoAnCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.csproj.ResolveComRef
 D:\BCat22\DoAnCSharp\DoAnCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.csproj.CoreCompileInputs.cache
 D:\BCat22\DoAnCSharp\DoAnCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.dll
 D:\BCat22\DoAnCSharp\DoAnCSharp\QLSV.Lib\obj\Debug\QLSV.Lib.pdb
+=======
+>>>>>>> 8ca9f297bee7856992d847c96cb5ba59d0a87105
