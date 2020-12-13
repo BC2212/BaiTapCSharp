@@ -34,3 +34,6 @@ C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\ThongTinSV\obj\Debug\QLSV.Form.csp
 C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\ThongTinSV\obj\Debug\QLSV.Form.csproj.CoreCompileInputs.cache
 C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\ThongTinSV\obj\Debug\ThongTinSV.exe
 C:\Users\thanh\OneDrive\Máy tính\DoAnCSharp\ThongTinSV\obj\Debug\ThongTinSV.pdb
+F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\bin\Debug\Microsoft.Azure.Amqp.dll
+F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\bin\Debug\Ninject.dll
+F:\Học Kì 5\C#\DoAnCSharp\ThongTinSV\bin\Debug\Ninject.xml

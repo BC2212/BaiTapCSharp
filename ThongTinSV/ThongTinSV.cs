@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLSV.Lib;
 
+
 namespace ThongTinSV
 {
     public partial class ThongTinSV : Form
@@ -17,26 +18,45 @@ namespace ThongTinSV
 
         public ThongTinSV()
         {
-
+            InitializeComponent();
         }
-
-        private void GetMessage(List<SinhVien> Message)
-        {
-            ListSinhVien = Message;
-        }
-
 
         private void ThongTinSV_Load(object sender, EventArgs e)
         {
+
         }
 
         private void lblTTSV_Click(object sender, EventArgs e)
         {
 
         }
+        private void ResetFormValue()
+        {
+            txtMSSV.Text = "";
+            txtName.Text = "";
+            txtNgaySinh.Text = "";
+            txtGioiTinh.Text = "";
+            txtDiaChi.Text = "";
+            txtLop.Text = "";
+            txtKhoa.Text = "";
+            txtSDT.Text = "";
+            txtEmail.Text = "";
+            txtMSSV.Focus();
+        }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            //Txt = "Trống"
+            ResetFormValue();
+            //Ẩn nút thêm
+            btnThem.Hide();
+            //Hiện nút Ok
+            btnOk.Show();
+
+
+
+
+
             if(txtMSSV.Text != "" && txtName.Text != "" && txtNgaySinh.Text != "" && txtGioiTinh.Text != "" && txtDiaChi.Text != "" && txtLop.Text != "" && txtKhoa.Text != "" && txtSDT.Text != "" && txtEmail.Text != "")
             {
                 //SinhVien sv = new SinhVien();
@@ -79,12 +99,28 @@ namespace ThongTinSV
 
         }
 
+
+        private void txtMSSV_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void plTiemKiem_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void mnuTTSV_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }
 
-        private void txtMSSV_TextChanged(object sender, EventArgs e)
+        private void lstvTimKiem_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

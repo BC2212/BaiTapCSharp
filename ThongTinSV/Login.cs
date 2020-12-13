@@ -14,17 +14,14 @@ namespace ThongTinSV
     public partial class Login : Form
     {
         public static List<Account> listAccounts;
-        public static List<SinhVien> listSinhVien;
 
         public Login()
         {
             InitializeComponent();
             //btnLogin.Location = Point(Form.Size[0])
             string accountPath = string.Format($@"{Application.StartupPath}\dataAccount.xlsx");
-            string sinhVienPath = string.Format($@"{Application.StartupPath}\dataSinhVien.xlsx");
-
             listAccounts = Data.GetAccountsFromExcel(accountPath);
-            listSinhVien = Data.GetSinhViensFromExcel(sinhVienPath);
+
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -48,29 +45,14 @@ namespace ThongTinSV
                 frmThongTinSV.Enabled = true;
                 this.Hide();
                 frmThongTinSV.ShowDialog();
-                this.ResetFormValue();
+                ResetFormValue();
                 this.Show();
             }
             else
             {
                 MessageBox.Show("Sai ten dang nhap hoac mat khau");
-                this.ResetFormValue();
+                ResetFormValue();
             }
-        }
-
-        private void lblQuenMatKhau_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        private void txtTaiKhoan_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTaoTaiKhoan_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
         }
     }
 }

@@ -56,10 +56,20 @@
             this.mnuDangXuat = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuThoat = new System.Windows.Forms.ToolStripMenuItem();
             this.plTiemKiem = new System.Windows.Forms.Panel();
+            this.lstvTimKiem = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnThoat = new System.Windows.Forms.Button();
-            this.lstvTiemKiem = new System.Windows.Forms.ListView();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.btnOk = new System.Windows.Forms.Button();
             this.mnuTTSV.SuspendLayout();
             this.plTiemKiem.SuspendLayout();
             this.SuspendLayout();
@@ -288,35 +298,106 @@
             // mnuTiemKiem
             // 
             this.mnuTiemKiem.Name = "mnuTiemKiem";
-            this.mnuTiemKiem.Size = new System.Drawing.Size(127, 22);
+            this.mnuTiemKiem.Size = new System.Drawing.Size(180, 22);
             this.mnuTiemKiem.Text = "Tiềm kiếm";
             this.mnuTiemKiem.Click += new System.EventHandler(this.mnuTiemKiem_Click);
             // 
             // mnuDangXuat
             // 
             this.mnuDangXuat.Name = "mnuDangXuat";
-            this.mnuDangXuat.Size = new System.Drawing.Size(127, 22);
+            this.mnuDangXuat.Size = new System.Drawing.Size(180, 22);
             this.mnuDangXuat.Text = "Đăng xuất";
             this.mnuDangXuat.Click += new System.EventHandler(this.mnuDangXuat_Click);
             // 
             // mnuThoat
             // 
             this.mnuThoat.Name = "mnuThoat";
-            this.mnuThoat.Size = new System.Drawing.Size(127, 22);
+            this.mnuThoat.Size = new System.Drawing.Size(180, 22);
             this.mnuThoat.Text = "Thoát";
             this.mnuThoat.Click += new System.EventHandler(this.mnuThoat_Click);
             // 
             // plTiemKiem
             // 
+            this.plTiemKiem.Controls.Add(this.lstvTimKiem);
             this.plTiemKiem.Controls.Add(this.btnThoat);
-            this.plTiemKiem.Controls.Add(this.lstvTiemKiem);
             this.plTiemKiem.Controls.Add(this.btnTimKiem);
             this.plTiemKiem.Controls.Add(this.txtTimKiem);
-            this.plTiemKiem.Location = new System.Drawing.Point(40, 385);
+            this.plTiemKiem.Location = new System.Drawing.Point(12, 385);
             this.plTiemKiem.Name = "plTiemKiem";
-            this.plTiemKiem.Size = new System.Drawing.Size(689, 379);
+            this.plTiemKiem.Size = new System.Drawing.Size(760, 379);
             this.plTiemKiem.TabIndex = 24;
             this.plTiemKiem.Visible = false;
+            this.plTiemKiem.Paint += new System.Windows.Forms.PaintEventHandler(this.plTiemKiem_Paint);
+            // 
+            // lstvTimKiem
+            // 
+            this.lstvTimKiem.BackColor = System.Drawing.SystemColors.Control;
+            this.lstvTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lstvTimKiem.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8,
+            this.columnHeader9});
+            this.lstvTimKiem.FullRowSelect = true;
+            this.lstvTimKiem.GridLines = true;
+            this.lstvTimKiem.HideSelection = false;
+            this.lstvTimKiem.Location = new System.Drawing.Point(0, 45);
+            this.lstvTimKiem.Name = "lstvTimKiem";
+            this.lstvTimKiem.Size = new System.Drawing.Size(757, 334);
+            this.lstvTimKiem.TabIndex = 32;
+            this.lstvTimKiem.UseCompatibleStateImageBehavior = false;
+            this.lstvTimKiem.View = System.Windows.Forms.View.Details;
+            this.lstvTimKiem.SelectedIndexChanged += new System.EventHandler(this.lstvTimKiem_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "MSSV";
+            this.columnHeader1.Width = 84;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Họ và tên";
+            this.columnHeader2.Width = 84;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Ngày Sinh";
+            this.columnHeader3.Width = 84;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Giới tính";
+            this.columnHeader4.Width = 84;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Địa chỉ";
+            this.columnHeader5.Width = 84;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "Lớp";
+            this.columnHeader6.Width = 84;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Khoa";
+            this.columnHeader7.Width = 84;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "SĐT";
+            this.columnHeader8.Width = 84;
+            // 
+            // columnHeader9
+            // 
+            this.columnHeader9.Text = "Email";
+            this.columnHeader9.Width = 84;
             // 
             // btnThoat
             // 
@@ -324,24 +405,13 @@
             this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnThoat.Location = new System.Drawing.Point(614, 3);
+            this.btnThoat.Location = new System.Drawing.Point(682, 2);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 35);
             this.btnThoat.TabIndex = 10;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // lstvTiemKiem
-            // 
-            this.lstvTiemKiem.BackColor = System.Drawing.SystemColors.Control;
-            this.lstvTiemKiem.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstvTiemKiem.HideSelection = false;
-            this.lstvTiemKiem.Location = new System.Drawing.Point(0, 45);
-            this.lstvTiemKiem.Name = "lstvTiemKiem";
-            this.lstvTiemKiem.Size = new System.Drawing.Size(689, 334);
-            this.lstvTiemKiem.TabIndex = 9;
-            this.lstvTiemKiem.UseCompatibleStateImageBehavior = false;
             // 
             // btnTimKiem
             // 
@@ -356,6 +426,7 @@
             this.btnTimKiem.TabIndex = 8;
             this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtTimKiem
             // 
@@ -365,11 +436,24 @@
             this.txtTimKiem.Size = new System.Drawing.Size(200, 35);
             this.txtTimKiem.TabIndex = 7;
             // 
+            // btnOk
+            // 
+            this.btnOk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOk.Location = new System.Drawing.Point(150, 329);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(100, 50);
+            this.btnOk.TabIndex = 25;
+            this.btnOk.Text = "OK";
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Visible = false;
+            // 
             // ThongTinSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.plTiemKiem);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
@@ -434,9 +518,19 @@
         private System.Windows.Forms.ToolStripMenuItem mnuDangXuat;
         private System.Windows.Forms.ToolStripMenuItem mnuThoat;
         private System.Windows.Forms.Panel plTiemKiem;
-        private System.Windows.Forms.ListView lstvTiemKiem;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.ListView lstvTimKiem;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.Button btnOk;
     }
 }
