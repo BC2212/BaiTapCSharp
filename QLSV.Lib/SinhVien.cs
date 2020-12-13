@@ -77,10 +77,8 @@ namespace QLSV.Lib
                 if (item.MaSV == maSV)
                 {
                     lSV.RemoveAt(count);
-                    
                     break;
                 }
-              
                 count++;
             }
             if (count < lSV.Count()) // đã xóa được sinh viên trả về true
@@ -115,7 +113,6 @@ namespace QLSV.Lib
                 {
                     break;
                 }
-
                 count++;
             }
             if (count < lSV.Count()) // nếu có sinh viên thì trả về sv đó
