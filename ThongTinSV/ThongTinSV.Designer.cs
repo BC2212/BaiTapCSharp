@@ -69,7 +69,8 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.btnOk = new System.Windows.Forms.Button();
+            this.btnThemOk = new System.Windows.Forms.Button();
+            this.btnSuaOk = new System.Windows.Forms.Button();
             this.mnuTTSV.SuspendLayout();
             this.plTiemKiem.SuspendLayout();
             this.SuspendLayout();
@@ -87,9 +88,10 @@
             // txtGioiTinh
             // 
             this.txtGioiTinh.Enabled = false;
-            this.txtGioiTinh.Location = new System.Drawing.Point(500, 120);
+            this.txtGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGioiTinh.Location = new System.Drawing.Point(500, 117);
             this.txtGioiTinh.Name = "txtGioiTinh";
-            this.txtGioiTinh.Size = new System.Drawing.Size(150, 20);
+            this.txtGioiTinh.Size = new System.Drawing.Size(150, 26);
             this.txtGioiTinh.TabIndex = 2;
             // 
             // lblName
@@ -105,9 +107,10 @@
             // txtName
             // 
             this.txtName.Enabled = false;
-            this.txtName.Location = new System.Drawing.Point(150, 72);
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(150, 67);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(500, 20);
+            this.txtName.Size = new System.Drawing.Size(500, 26);
             this.txtName.TabIndex = 4;
             // 
             // lblNgaySinh
@@ -123,9 +126,10 @@
             // txtMSSV
             // 
             this.txtMSSV.Enabled = false;
-            this.txtMSSV.Location = new System.Drawing.Point(376, 24);
+            this.txtMSSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMSSV.Location = new System.Drawing.Point(356, 21);
             this.txtMSSV.Name = "txtMSSV";
-            this.txtMSSV.Size = new System.Drawing.Size(150, 20);
+            this.txtMSSV.Size = new System.Drawing.Size(150, 26);
             this.txtMSSV.TabIndex = 6;
             this.txtMSSV.TextChanged += new System.EventHandler(this.txtMSSV_TextChanged);
             // 
@@ -133,7 +137,7 @@
             // 
             this.lblGioiTinh.AutoSize = true;
             this.lblGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGioiTinh.Location = new System.Drawing.Point(400, 118);
+            this.lblGioiTinh.Location = new System.Drawing.Point(396, 120);
             this.lblGioiTinh.Name = "lblGioiTinh";
             this.lblGioiTinh.Size = new System.Drawing.Size(67, 20);
             this.lblGioiTinh.TabIndex = 7;
@@ -142,25 +146,28 @@
             // txtNgaySinh
             // 
             this.txtNgaySinh.Enabled = false;
-            this.txtNgaySinh.Location = new System.Drawing.Point(150, 120);
+            this.txtNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNgaySinh.Location = new System.Drawing.Point(150, 117);
             this.txtNgaySinh.Name = "txtNgaySinh";
-            this.txtNgaySinh.Size = new System.Drawing.Size(200, 20);
+            this.txtNgaySinh.Size = new System.Drawing.Size(200, 26);
             this.txtNgaySinh.TabIndex = 8;
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.Enabled = false;
-            this.txtDiaChi.Location = new System.Drawing.Point(150, 170);
+            this.txtDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiaChi.Location = new System.Drawing.Point(150, 167);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(300, 20);
+            this.txtDiaChi.Size = new System.Drawing.Size(300, 26);
             this.txtDiaChi.TabIndex = 9;
             // 
             // txtLop
             // 
             this.txtLop.Enabled = false;
-            this.txtLop.Location = new System.Drawing.Point(550, 170);
+            this.txtLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLop.Location = new System.Drawing.Point(550, 167);
             this.txtLop.Name = "txtLop";
-            this.txtLop.Size = new System.Drawing.Size(100, 20);
+            this.txtLop.Size = new System.Drawing.Size(100, 26);
             this.txtLop.TabIndex = 10;
             // 
             // lblKhoa
@@ -187,7 +194,7 @@
             // 
             this.lblLop.AutoSize = true;
             this.lblLop.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLop.Location = new System.Drawing.Point(500, 170);
+            this.lblLop.Location = new System.Drawing.Point(496, 170);
             this.lblLop.Name = "lblLop";
             this.lblLop.Size = new System.Drawing.Size(36, 20);
             this.lblLop.TabIndex = 13;
@@ -216,25 +223,28 @@
             // txtSDT
             // 
             this.txtSDT.Enabled = false;
-            this.txtSDT.Location = new System.Drawing.Point(150, 270);
+            this.txtSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDT.Location = new System.Drawing.Point(150, 267);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(150, 20);
+            this.txtSDT.Size = new System.Drawing.Size(150, 26);
             this.txtSDT.TabIndex = 16;
             // 
             // txtEmail
             // 
             this.txtEmail.Enabled = false;
-            this.txtEmail.Location = new System.Drawing.Point(400, 270);
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(400, 267);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(250, 20);
+            this.txtEmail.Size = new System.Drawing.Size(250, 26);
             this.txtEmail.TabIndex = 17;
             // 
             // txtKhoa
             // 
             this.txtKhoa.Enabled = false;
-            this.txtKhoa.Location = new System.Drawing.Point(150, 220);
+            this.txtKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKhoa.Location = new System.Drawing.Point(150, 217);
             this.txtKhoa.Name = "txtKhoa";
-            this.txtKhoa.Size = new System.Drawing.Size(500, 20);
+            this.txtKhoa.Size = new System.Drawing.Size(500, 26);
             this.txtKhoa.TabIndex = 18;
             // 
             // btnThem
@@ -273,6 +283,7 @@
             this.btnSua.TabIndex = 20;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // mnuTTSV
             // 
@@ -292,7 +303,7 @@
             this.mnuDangXuat,
             this.mnuThoat});
             this.mnu.Name = "mnu";
-            this.mnu.Size = new System.Drawing.Size(48, 20);
+            this.mnu.Size = new System.Drawing.Size(45, 20);
             this.mnu.Text = "Menu";
             // 
             // mnuTiemKiem
@@ -322,7 +333,7 @@
             this.plTiemKiem.Controls.Add(this.btnThoat);
             this.plTiemKiem.Controls.Add(this.btnTimKiem);
             this.plTiemKiem.Controls.Add(this.txtTimKiem);
-            this.plTiemKiem.Location = new System.Drawing.Point(12, 385);
+            this.plTiemKiem.Location = new System.Drawing.Point(12, 403);
             this.plTiemKiem.Name = "plTiemKiem";
             this.plTiemKiem.Size = new System.Drawing.Size(760, 379);
             this.plTiemKiem.TabIndex = 24;
@@ -430,30 +441,46 @@
             // 
             // txtTimKiem
             // 
+            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimKiem.Location = new System.Drawing.Point(3, 3);
             this.txtTimKiem.Multiline = true;
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(200, 35);
             this.txtTimKiem.TabIndex = 7;
             // 
-            // btnOk
+            // btnThemOk
             // 
-            this.btnOk.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOk.Location = new System.Drawing.Point(150, 329);
-            this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(100, 50);
-            this.btnOk.TabIndex = 25;
-            this.btnOk.Text = "OK";
-            this.btnOk.UseVisualStyleBackColor = true;
-            this.btnOk.Visible = false;
+            this.btnThemOk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThemOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemOk.Location = new System.Drawing.Point(150, 329);
+            this.btnThemOk.Name = "btnThemOk";
+            this.btnThemOk.Size = new System.Drawing.Size(100, 50);
+            this.btnThemOk.TabIndex = 25;
+            this.btnThemOk.Text = "OK";
+            this.btnThemOk.UseVisualStyleBackColor = true;
+            this.btnThemOk.Visible = false;
+            this.btnThemOk.Click += new System.EventHandler(this.btnThemOk_Click);
+            // 
+            // btnSuaOk
+            // 
+            this.btnSuaOk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSuaOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaOk.Location = new System.Drawing.Point(350, 329);
+            this.btnSuaOk.Name = "btnSuaOk";
+            this.btnSuaOk.Size = new System.Drawing.Size(100, 50);
+            this.btnSuaOk.TabIndex = 26;
+            this.btnSuaOk.Text = "OK";
+            this.btnSuaOk.UseVisualStyleBackColor = true;
+            this.btnSuaOk.Visible = false;
+            this.btnSuaOk.Click += new System.EventHandler(this.btnSuaOk_Click);
             // 
             // ThongTinSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.btnOk);
+            this.Controls.Add(this.btnSuaOk);
+            this.Controls.Add(this.btnThemOk);
             this.Controls.Add(this.plTiemKiem);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
@@ -531,6 +558,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
         private System.Windows.Forms.ColumnHeader columnHeader9;
-        private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.Button btnThemOk;
+        private System.Windows.Forms.Button btnSuaOk;
     }
 }
