@@ -53,6 +53,7 @@
             this.mnuTTSV = new System.Windows.Forms.MenuStrip();
             this.mnu = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTiemKiem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuThemSV = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDangXuat = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuThoat = new System.Windows.Forms.ToolStripMenuItem();
             this.plTiemKiem = new System.Windows.Forms.Panel();
@@ -71,7 +72,6 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnThemOk = new System.Windows.Forms.Button();
             this.btnSuaOk = new System.Windows.Forms.Button();
-            this.mnuThemSV = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTTSV.SuspendLayout();
             this.plTiemKiem.SuspendLayout();
             this.SuspendLayout();
@@ -294,7 +294,6 @@
             this.mnuTTSV.Name = "mnuTTSV";
             this.mnuTTSV.Size = new System.Drawing.Size(784, 24);
             this.mnuTTSV.TabIndex = 23;
-            this.mnuTTSV.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.mnuTTSV_ItemClicked);
             // 
             // mnu
             // 
@@ -310,21 +309,28 @@
             // mnuTiemKiem
             // 
             this.mnuTiemKiem.Name = "mnuTiemKiem";
-            this.mnuTiemKiem.Size = new System.Drawing.Size(129, 22);
+            this.mnuTiemKiem.Size = new System.Drawing.Size(180, 22);
             this.mnuTiemKiem.Text = "Tiềm kiếm";
             this.mnuTiemKiem.Click += new System.EventHandler(this.mnuTiemKiem_Click);
+            // 
+            // mnuThemSV
+            // 
+            this.mnuThemSV.Name = "mnuThemSV";
+            this.mnuThemSV.Size = new System.Drawing.Size(180, 22);
+            this.mnuThemSV.Text = "Thêm sinh viên";
+            this.mnuThemSV.Visible = false;
             // 
             // mnuDangXuat
             // 
             this.mnuDangXuat.Name = "mnuDangXuat";
-            this.mnuDangXuat.Size = new System.Drawing.Size(129, 22);
+            this.mnuDangXuat.Size = new System.Drawing.Size(180, 22);
             this.mnuDangXuat.Text = "Đăng xuất";
             this.mnuDangXuat.Click += new System.EventHandler(this.mnuDangXuat_Click);
             // 
             // mnuThoat
             // 
             this.mnuThoat.Name = "mnuThoat";
-            this.mnuThoat.Size = new System.Drawing.Size(129, 22);
+            this.mnuThoat.Size = new System.Drawing.Size(180, 22);
             this.mnuThoat.Text = "Thoát";
             this.mnuThoat.Click += new System.EventHandler(this.mnuThoat_Click);
             // 
@@ -373,7 +379,7 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Họ và tên";
-            this.columnHeader2.Width = 84;
+            this.columnHeader2.Width = 183;
             // 
             // columnHeader3
             // 
@@ -473,13 +479,6 @@
             this.btnSuaOk.UseVisualStyleBackColor = true;
             this.btnSuaOk.Visible = false;
             this.btnSuaOk.Click += new System.EventHandler(this.btnSuaOk_Click);
-            // 
-            // mnuThemSV
-            // 
-            this.mnuThemSV.Name = "mnuThemSV";
-            this.mnuThemSV.Size = new System.Drawing.Size(180, 22);
-            this.mnuThemSV.Text = "Thêm sinh viên";
-            this.mnuThemSV.Visible = false;
             // 
             // ThongTinSV
             // 
