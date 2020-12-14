@@ -71,6 +71,7 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnThemOk = new System.Windows.Forms.Button();
             this.btnSuaOk = new System.Windows.Forms.Button();
+            this.mnuThemSV = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTTSV.SuspendLayout();
             this.plTiemKiem.SuspendLayout();
             this.SuspendLayout();
@@ -299,6 +300,7 @@
             // 
             this.mnu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuTiemKiem,
+            this.mnuThemSV,
             this.mnuDangXuat,
             this.mnuThoat});
             this.mnu.Name = "mnu";
@@ -472,6 +474,13 @@
             this.btnSuaOk.Visible = false;
             this.btnSuaOk.Click += new System.EventHandler(this.btnSuaOk_Click);
             // 
+            // mnuThemSV
+            // 
+            this.mnuThemSV.Name = "mnuThemSV";
+            this.mnuThemSV.Size = new System.Drawing.Size(180, 22);
+            this.mnuThemSV.Text = "Thêm sinh viên";
+            this.mnuThemSV.Visible = false;
+            // 
             // ThongTinSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -558,5 +567,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.Button btnThemOk;
         private System.Windows.Forms.Button btnSuaOk;
+        private System.Windows.Forms.ToolStripMenuItem mnuThemSV;
     }
 }

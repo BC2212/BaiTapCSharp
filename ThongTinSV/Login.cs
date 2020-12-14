@@ -47,7 +47,7 @@ namespace ThongTinSV
                 ThongTinSV frmThongTinSV = new ThongTinSV();
                 frmThongTinSV.Enabled = true;
 
-                frmThongTinSV.Sender(txtTaiKhoan.Text);
+                frmThongTinSV.Sender(txtTaiKhoan.Text, checkLogin);
 
                 this.Hide();
                 frmThongTinSV.ShowDialog();

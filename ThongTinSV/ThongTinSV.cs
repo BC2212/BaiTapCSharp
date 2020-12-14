@@ -16,7 +16,7 @@ namespace ThongTinSV
     public partial class ThongTinSV : Form
     {
         public List<SinhVien> listSinhVien;
-        public delegate void SendMessage(string username);
+        public delegate void SendMessage(string username, int permission);
         public SendMessage Sender;
 
         private static string username_Message;
@@ -30,8 +30,6 @@ namespace ThongTinSV
             string sinhVienFilePath = string.Format($@"{Application.StartupPath}\dataSinhVien.xlsx");
 
             listSinhVien = Data.GetSinhViensFromExcel(sinhVienFilePath);
-
-            DisableComponent();
         }
 
         private void ThongTinSV_Load(object sender, EventArgs e)
@@ -39,10 +37,10 @@ namespace ThongTinSV
             DisplaySinhVienDetail();
         }
 
-        public void GetMessage(string username)
+        public void GetMessage(string username, int permission)
         {
             username_Message = username;
-            //permission_Message = permission;
+            permission_Message = permission;
         }
 
         //Dùng permission_Message để kiểm tra
@@ -52,12 +50,25 @@ namespace ThongTinSV
             return (permission_Message & permissionNeedChecking) == permissionNeedChecking ? true : false;
         }
 
-        private void DisableFromViewPermission()
+        private void DisableFromPermission()
         {
             //Các textbox còn lại mặc định không được phép chỉnh sửa. Nên không cần thay đổi tại đây
             btnThem.Visible = false;
             btnSua.Visible = false;
             btnXoa.Visible = false;
+            mnuThemSV.Visible = false;
+            mnuTiemKiem.Visible = false;
+            plTiemKiem.Visible = false;
+        }
+
+        private void EnableFromPermission()
+        {
+            btnSua.Visible = true;
+            btnThem.Visible = true;
+            btnXoa.Visible = true;
+            mnuTiemKiem.Visible = true;
+            mnuThemSV.Visible = true;
+            plTiemKiem.Visible = true;
         }
 
         private void DisableComponent()
@@ -65,7 +76,7 @@ namespace ThongTinSV
             //Các quyền được đại diện bằng int. Có thể gọi quyền từ class Permission
             if (CheckUserPermission(Permissions.View))
             {
-                DisableFromViewPermission();
+                DisableFromPermission();
             }
         }
 
@@ -76,28 +87,37 @@ namespace ThongTinSV
 
         private void DisplaySinhVienDetail()
         {
-            if (CheckUsernameExist())
+            if (CheckUserPermission(Permissions.DeleteUser + Permissions.Special))
             {
-                int index = SinhVien.IndexOfSinhVien(listSinhVien, username_Message);
-
-                txtMSSV.Text = listSinhVien[index].MaSV;
-                txtName.Text = listSinhVien[index].HoTen;
-
-                if (listSinhVien[index].NgaySinh.ToShortDateString() == DateTime.Now.ToShortDateString())
+                EnableFromPermission();
+            }
+            else
+            {
+                if (CheckUsernameExist())
                 {
-                    txtNgaySinh.Text = "";
-                }
-                else
-                {
-                    txtNgaySinh.Text = listSinhVien[index].NgaySinh.ToShortDateString();
-                }
+                    int index = SinhVien.IndexOfSinhVien(listSinhVien, username_Message);
 
-                txtGioiTinh.Text = listSinhVien[index].GioiTinh;
-                txtDiaChi.Text = listSinhVien[index].DiaChi;
-                txtLop.Text = listSinhVien[index].Lop;
-                txtKhoa.Text = listSinhVien[index].Khoa;
-                txtSDT.Text = listSinhVien[index].Sdt;
-                txtEmail.Text = listSinhVien[index].Email;
+                    DisableFromPermission();
+
+                    txtMSSV.Text = listSinhVien[index].MaSV;
+                    txtName.Text = listSinhVien[index].HoTen;
+
+                    if (listSinhVien[index].NgaySinh.ToShortDateString() == DateTime.Now.ToShortDateString())
+                    {
+                        txtNgaySinh.Text = "";
+                    }
+                    else
+                    {
+                        txtNgaySinh.Text = listSinhVien[index].NgaySinh.ToShortDateString();
+                    }
+
+                    txtGioiTinh.Text = listSinhVien[index].GioiTinh;
+                    txtDiaChi.Text = listSinhVien[index].DiaChi;
+                    txtLop.Text = listSinhVien[index].Lop;
+                    txtKhoa.Text = listSinhVien[index].Khoa;
+                    txtSDT.Text = listSinhVien[index].Sdt;
+                    txtEmail.Text = listSinhVien[index].Email;
+                }
             }
         }
 
@@ -126,39 +146,11 @@ namespace ThongTinSV
             System.Windows.Forms.Application.Exit();
         }
 
-        private string CheckDate(SinhVien sv)
-        {
-            return (sv.NgaySinh.ToShortDateString() == DateTime.Now.ToShortDateString()) ? string.Empty : sv.NgaySinh.ToShortDateString();
-        }
-
-        private ListViewItem AddSVToListViewItem(SinhVien sv)
-        {
-            ListViewItem LVItem = new ListViewItem(sv.MaSV);
-
-            LVItem.SubItems.Add(new ListViewItem.ListViewSubItem(LVItem, sv.HoTen));
-
-            LVItem.SubItems.Add(new ListViewItem.ListViewSubItem(LVItem, CheckDate(sv)));
-
-            LVItem.SubItems.Add(new ListViewItem.ListViewSubItem(LVItem, sv.GioiTinh));
-            LVItem.SubItems.Add(new ListViewItem.ListViewSubItem(LVItem, sv.DiaChi));
-            LVItem.SubItems.Add(new ListViewItem.ListViewSubItem(LVItem, sv.Khoa));
-            LVItem.SubItems.Add(new ListViewItem.ListViewSubItem(LVItem, sv.Lop));
-            LVItem.SubItems.Add(new ListViewItem.ListViewSubItem(LVItem, sv.Sdt));
-            LVItem.SubItems.Add(new ListViewItem.ListViewSubItem(LVItem, sv.Email));
-
-            return LVItem;
-        }
-
         private void mnuTiemKiem_Click(object sender, EventArgs e)
         {
-            lstvTimKiem.Items.Clear();
             plTiemKiem.Visible = true;
-            txtTimKiem.Text = "";
-
-            foreach(SinhVien sv in listSinhVien)
-            {
-                lstvTimKiem.Items.Add(AddSVToListViewItem(sv));
-            }
+            btnSuaOk.Visible = false;
+            btnThemOk.Visible = false;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -171,21 +163,22 @@ namespace ThongTinSV
 
         }
 
+        private void txtMSSV_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            lstvTimKiem.Items.Clear();
-            if (!string.IsNullOrEmpty(txtTimKiem.Text))
-            {
-                int timKiem = SinhVien.IndexOfSinhVienByMSSV(listSinhVien, txtTimKiem.Text);
-
-                if (timKiem != -1)
-                {
-                    lstvTimKiem.Items.Add(AddSVToListViewItem(listSinhVien[timKiem]));
-                }
-            }
+            
         }
 
         private void mnuTTSV_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void lstvTimKiem_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -194,6 +187,15 @@ namespace ThongTinSV
         {
             //Txt = "Trống"
             ResetFormValue();
+            txtMSSV.Enabled = true;
+            txtName.Enabled = true;
+            txtNgaySinh.Enabled = true;
+            txtGioiTinh.Enabled = true;
+            txtDiaChi.Enabled = true;
+            txtLop.Enabled = true;
+            txtKhoa.Enabled = true;
+            txtSDT.Enabled = true;
+            txtEmail.Enabled = true;
             //Ẩn nút thêm
             btnThem.Hide();
             //Hiện nút Ok
@@ -290,19 +292,6 @@ namespace ThongTinSV
 
         }
 
-        private void lstvTimKiem_ItemActivate(object sender, EventArgs e)
-        {
-            txtMSSV.Text = lstvTimKiem.SelectedItems[0].SubItems[0].Text;
-            txtName.Text = lstvTimKiem.SelectedItems[0].SubItems[1].Text;
-            txtNgaySinh.Text = lstvTimKiem.SelectedItems[0].SubItems[2].Text;
-            txtGioiTinh.Text = lstvTimKiem.SelectedItems[0].SubItems[3].Text;
-            txtDiaChi.Text = lstvTimKiem.SelectedItems[0].SubItems[4].Text;
-            txtKhoa.Text = lstvTimKiem.SelectedItems[0].SubItems[5].Text;
-            txtLop.Text = lstvTimKiem.SelectedItems[0].SubItems[6].Text;
-            txtSDT.Text = lstvTimKiem.SelectedItems[0].SubItems[7].Text;
-            txtEmail.Text = lstvTimKiem.SelectedItems[0].SubItems[8].Text;
-
-            plTiemKiem.Visible = false;
-        }
+        
     }
 }
