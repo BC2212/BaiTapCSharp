@@ -126,9 +126,39 @@ namespace ThongTinSV
             System.Windows.Forms.Application.Exit();
         }
 
+        private string CheckDate(SinhVien sv)
+        {
+            return (sv.NgaySinh.ToShortDateString() == DateTime.Now.ToShortDateString()) ? string.Empty : sv.NgaySinh.ToShortDateString();
+        }
+
+        private ListViewItem AddSVToListViewItem(SinhVien sv)
+        {
+            ListViewItem LVItem = new ListViewItem(sv.MaSV);
+
+            LVItem.SubItems.Add(new ListViewItem.ListViewSubItem(LVItem, sv.HoTen));
+
+            LVItem.SubItems.Add(new ListViewItem.ListViewSubItem(LVItem, CheckDate(sv)));
+
+            LVItem.SubItems.Add(new ListViewItem.ListViewSubItem(LVItem, sv.GioiTinh));
+            LVItem.SubItems.Add(new ListViewItem.ListViewSubItem(LVItem, sv.DiaChi));
+            LVItem.SubItems.Add(new ListViewItem.ListViewSubItem(LVItem, sv.Khoa));
+            LVItem.SubItems.Add(new ListViewItem.ListViewSubItem(LVItem, sv.Lop));
+            LVItem.SubItems.Add(new ListViewItem.ListViewSubItem(LVItem, sv.Sdt));
+            LVItem.SubItems.Add(new ListViewItem.ListViewSubItem(LVItem, sv.Email));
+
+            return LVItem;
+        }
+
         private void mnuTiemKiem_Click(object sender, EventArgs e)
         {
+            lstvTimKiem.Items.Clear();
             plTiemKiem.Visible = true;
+            txtTimKiem.Text = "";
+
+            foreach(SinhVien sv in listSinhVien)
+            {
+                lstvTimKiem.Items.Add(AddSVToListViewItem(sv));
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -141,22 +171,21 @@ namespace ThongTinSV
 
         }
 
-        private void txtMSSV_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            
+            lstvTimKiem.Items.Clear();
+            if (!string.IsNullOrEmpty(txtTimKiem.Text))
+            {
+                int timKiem = SinhVien.IndexOfSinhVienByMSSV(listSinhVien, txtTimKiem.Text);
+
+                if (timKiem != -1)
+                {
+                    lstvTimKiem.Items.Add(AddSVToListViewItem(listSinhVien[timKiem]));
+                }
+            }
         }
 
         private void mnuTTSV_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-        private void lstvTimKiem_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -261,6 +290,19 @@ namespace ThongTinSV
 
         }
 
-        
+        private void lstvTimKiem_ItemActivate(object sender, EventArgs e)
+        {
+            txtMSSV.Text = lstvTimKiem.SelectedItems[0].SubItems[0].Text;
+            txtName.Text = lstvTimKiem.SelectedItems[0].SubItems[1].Text;
+            txtNgaySinh.Text = lstvTimKiem.SelectedItems[0].SubItems[2].Text;
+            txtGioiTinh.Text = lstvTimKiem.SelectedItems[0].SubItems[3].Text;
+            txtDiaChi.Text = lstvTimKiem.SelectedItems[0].SubItems[4].Text;
+            txtKhoa.Text = lstvTimKiem.SelectedItems[0].SubItems[5].Text;
+            txtLop.Text = lstvTimKiem.SelectedItems[0].SubItems[6].Text;
+            txtSDT.Text = lstvTimKiem.SelectedItems[0].SubItems[7].Text;
+            txtEmail.Text = lstvTimKiem.SelectedItems[0].SubItems[8].Text;
+
+            plTiemKiem.Visible = false;
+        }
     }
 }

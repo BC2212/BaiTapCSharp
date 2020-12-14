@@ -106,6 +106,17 @@ namespace QLSV.Lib
             });
         }
 
+        //Tìm sinh viên theo mã sinh viên
+        //Trả về khác -1: index của sinh viên đó trong list
+        //Trả về -1: không tìm được
+        public static int IndexOfSinhVienByMSSV(List<SinhVien> listSinhVien, string mssv)
+        {
+            return listSinhVien.FindIndex(delegate (SinhVien sinhVien)
+            {
+                return sinhVien.MaSV.Equals(mssv);
+            });
+        }
+
         public static void PrintAllSinhVien(List<SinhVien> listSinhVien)
         {
             foreach(SinhVien sinhvien in listSinhVien)

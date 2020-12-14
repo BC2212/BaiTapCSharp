@@ -131,7 +131,6 @@
             this.txtMSSV.Name = "txtMSSV";
             this.txtMSSV.Size = new System.Drawing.Size(150, 26);
             this.txtMSSV.TabIndex = 6;
-            this.txtMSSV.TextChanged += new System.EventHandler(this.txtMSSV_TextChanged);
             // 
             // lblGioiTinh
             // 
@@ -303,27 +302,27 @@
             this.mnuDangXuat,
             this.mnuThoat});
             this.mnu.Name = "mnu";
-            this.mnu.Size = new System.Drawing.Size(45, 20);
+            this.mnu.Size = new System.Drawing.Size(50, 20);
             this.mnu.Text = "Menu";
             // 
             // mnuTiemKiem
             // 
             this.mnuTiemKiem.Name = "mnuTiemKiem";
-            this.mnuTiemKiem.Size = new System.Drawing.Size(180, 22);
+            this.mnuTiemKiem.Size = new System.Drawing.Size(129, 22);
             this.mnuTiemKiem.Text = "Tiềm kiếm";
             this.mnuTiemKiem.Click += new System.EventHandler(this.mnuTiemKiem_Click);
             // 
             // mnuDangXuat
             // 
             this.mnuDangXuat.Name = "mnuDangXuat";
-            this.mnuDangXuat.Size = new System.Drawing.Size(180, 22);
+            this.mnuDangXuat.Size = new System.Drawing.Size(129, 22);
             this.mnuDangXuat.Text = "Đăng xuất";
             this.mnuDangXuat.Click += new System.EventHandler(this.mnuDangXuat_Click);
             // 
             // mnuThoat
             // 
             this.mnuThoat.Name = "mnuThoat";
-            this.mnuThoat.Size = new System.Drawing.Size(180, 22);
+            this.mnuThoat.Size = new System.Drawing.Size(129, 22);
             this.mnuThoat.Text = "Thoát";
             this.mnuThoat.Click += new System.EventHandler(this.mnuThoat_Click);
             // 
@@ -333,7 +332,7 @@
             this.plTiemKiem.Controls.Add(this.btnThoat);
             this.plTiemKiem.Controls.Add(this.btnTimKiem);
             this.plTiemKiem.Controls.Add(this.txtTimKiem);
-            this.plTiemKiem.Location = new System.Drawing.Point(12, 403);
+            this.plTiemKiem.Location = new System.Drawing.Point(12, 21);
             this.plTiemKiem.Name = "plTiemKiem";
             this.plTiemKiem.Size = new System.Drawing.Size(760, 379);
             this.plTiemKiem.TabIndex = 24;
@@ -362,7 +361,7 @@
             this.lstvTimKiem.TabIndex = 32;
             this.lstvTimKiem.UseCompatibleStateImageBehavior = false;
             this.lstvTimKiem.View = System.Windows.Forms.View.Details;
-            this.lstvTimKiem.SelectedIndexChanged += new System.EventHandler(this.lstvTimKiem_SelectedIndexChanged);
+            this.lstvTimKiem.ItemActivate += new System.EventHandler(this.lstvTimKiem_ItemActivate);
             // 
             // columnHeader1
             // 
@@ -477,7 +476,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(784, 413);
             this.Controls.Add(this.btnSuaOk);
             this.Controls.Add(this.btnThemOk);
             this.Controls.Add(this.plTiemKiem);
